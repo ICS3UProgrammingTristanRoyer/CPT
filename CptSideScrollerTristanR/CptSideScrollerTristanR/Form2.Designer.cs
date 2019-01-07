@@ -47,7 +47,7 @@
 			// 
 			// prbProgressBar
 			// 
-			this.prbProgressBar.Location = new System.Drawing.Point(181, 237);
+			this.prbProgressBar.Location = new System.Drawing.Point(248, 238);
 			this.prbProgressBar.Name = "prbProgressBar";
 			this.prbProgressBar.Size = new System.Drawing.Size(100, 23);
 			this.prbProgressBar.TabIndex = 1;

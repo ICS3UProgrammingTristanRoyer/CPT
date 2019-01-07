@@ -21,6 +21,7 @@ namespace CptSideScrollerTristanR
 		int jumpSpeed = 10; // int to set the jump speed
 		int force = 8; // force of the jump in an integer
 		int score = 0; // default score int set to 0
+		int coins = 0; // default coins int set to 0
 
 		int playSpeed = 18; // this int will set the character's speed to 18
 		int backLeft = 8; // this integer will set the background moving speed to 8
@@ -139,11 +140,12 @@ namespace CptSideScrollerTristanR
 					{
 						this.Controls.Remove(x); // then we are going to remove the coin image 
 						score++; // add 1 to the score
+						coins++; // add 1 to the coins collected
 					}
 
 					// if the player collides with the door and has key boolean is true
 
-				    if (player.Bounds.IntersectsWith(door.Bounds) && hasKey)
+				    if (player.Bounds.IntersectsWith(door.Bounds) && hasKey )
 					{
 						// then we change the image of the door to open 
 						door.Image = Properties.Resources.Open_Door;
@@ -154,13 +156,14 @@ namespace CptSideScrollerTristanR
 					}
 					// if the player collides with the key picture box
 
-				if (player.Bounds.IntersectsWith(key.Bounds))
-					{
-						// then we remove the key from the game
-						this.Controls.Remove(key);
-						// change the has key boolean to true
-						hasKey = true;
-					}
+						if (player.Bounds.IntersectsWith(key.Bounds))
+						{
+							// then we remove the key from the game
+							this.Controls.Remove(key);
+							// change the has key boolean to true
+							hasKey = true;
+						}
+					
 					
 					// this is where the player dies
 					// if the player goes below the forms height then we will end the game

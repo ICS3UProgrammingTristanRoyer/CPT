@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
 			this.gameTimer = new System.Windows.Forms.Timer(this.components);
 			this.pictureBox27 = new System.Windows.Forms.PictureBox();
 			this.pictureBox26 = new System.Windows.Forms.PictureBox();
@@ -58,6 +57,8 @@
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.background = new System.Windows.Forms.PictureBox();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.txtCoins = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
@@ -85,6 +86,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// gameTimer
@@ -106,7 +108,7 @@
 			// pictureBox26
 			// 
 			this.pictureBox26.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
-			this.pictureBox26.Location = new System.Drawing.Point(1531, 239);
+			this.pictureBox26.Location = new System.Drawing.Point(1485, 289);
 			this.pictureBox26.Name = "pictureBox26";
 			this.pictureBox26.Size = new System.Drawing.Size(125, 29);
 			this.pictureBox26.TabIndex = 26;
@@ -116,7 +118,7 @@
 			// pictureBox25
 			// 
 			this.pictureBox25.Image = global::CptSideScrollerTristanR.Properties.Resources.coin;
-			this.pictureBox25.Location = new System.Drawing.Point(1577, 211);
+			this.pictureBox25.Location = new System.Drawing.Point(1530, 253);
 			this.pictureBox25.Name = "pictureBox25";
 			this.pictureBox25.Size = new System.Drawing.Size(33, 30);
 			this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -313,6 +315,7 @@
 			this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
 			this.player.TabIndex = 7;
 			this.player.TabStop = false;
+			this.player.Tag = "player";
 			// 
 			// key
 			// 
@@ -323,6 +326,7 @@
 			this.key.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
 			this.key.TabIndex = 6;
 			this.key.TabStop = false;
+			this.key.Tag = "key";
 			// 
 			// coin
 			// 
@@ -361,7 +365,7 @@
 			this.pictureBox2.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
 			this.pictureBox2.Location = new System.Drawing.Point(0, 426);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(553, 50);
+			this.pictureBox2.Size = new System.Drawing.Size(553, 58);
 			this.pictureBox2.TabIndex = 1;
 			this.pictureBox2.TabStop = false;
 			this.pictureBox2.Tag = "platform";
@@ -376,11 +380,34 @@
 			this.background.TabIndex = 0;
 			this.background.TabStop = false;
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
+			this.pictureBox1.Location = new System.Drawing.Point(1613, 176);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(125, 29);
+			this.pictureBox1.TabIndex = 28;
+			this.pictureBox1.TabStop = false;
+			this.pictureBox1.Tag = "platform";
+			// 
+			// txtCoins
+			// 
+			this.txtCoins.AutoSize = true;
+			this.txtCoins.BackColor = System.Drawing.Color.DarkBlue;
+			this.txtCoins.ForeColor = System.Drawing.Color.DarkRed;
+			this.txtCoins.Location = new System.Drawing.Point(479, 9);
+			this.txtCoins.Name = "txtCoins";
+			this.txtCoins.Size = new System.Drawing.Size(36, 13);
+			this.txtCoins.TabIndex = 29;
+			this.txtCoins.Text = "Coins:";
+			// 
 			// Form3
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(598, 481);
+			this.ClientSize = new System.Drawing.Size(596, 481);
+			this.Controls.Add(this.txtCoins);
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.pictureBox27);
 			this.Controls.Add(this.pictureBox26);
 			this.Controls.Add(this.pictureBox25);
@@ -439,6 +466,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -460,7 +488,6 @@
 		private System.Windows.Forms.PictureBox pictureBox12;
 		private System.Windows.Forms.PictureBox pictureBox13;
 		private System.Windows.Forms.PictureBox pictureBox14;
-		private System.ComponentModel.BackgroundWorker backgroundWorker1;
 		private System.Windows.Forms.PictureBox pictureBox15;
 		private System.Windows.Forms.PictureBox pictureBox16;
 		private System.Windows.Forms.PictureBox pictureBox17;
@@ -475,5 +502,7 @@
 		private System.Windows.Forms.PictureBox pictureBox26;
 		private System.Windows.Forms.PictureBox pictureBox27;
 		private System.Windows.Forms.Timer gameTimer;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.Label txtCoins;
 	}
 }
