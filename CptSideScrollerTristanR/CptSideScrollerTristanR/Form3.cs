@@ -87,7 +87,6 @@ namespace CptSideScrollerTristanR
 				// when they are found it will move them towards the left 
 				foreach (Control x in this.Controls)
 				{
-						is PictureBox && x.Tag == "key")
 					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" || 
 						x is PictureBox && x.Tag == "key")
 					{
