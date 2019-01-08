@@ -319,11 +319,11 @@
 			// 
 			// key
 			// 
-			this.key.Image = global::CptSideScrollerTristanR.Properties.Resources.key;
+			this.key.Image = global::CptSideScrollerTristanR.Properties.Resources.key1;
 			this.key.Location = new System.Drawing.Point(1750, 12);
 			this.key.Name = "key";
 			this.key.Size = new System.Drawing.Size(90, 47);
-			this.key.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+			this.key.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.key.TabIndex = 6;
 			this.key.TabStop = false;
 			this.key.Tag = "key";
@@ -405,7 +405,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(596, 481);
+			this.ClientSize = new System.Drawing.Size(1924, 481);
 			this.Controls.Add(this.txtCoins);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.pictureBox27);

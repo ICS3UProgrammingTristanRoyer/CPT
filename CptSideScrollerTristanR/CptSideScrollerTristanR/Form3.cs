@@ -21,7 +21,7 @@ namespace CptSideScrollerTristanR
 		int jumpSpeed = 10; // int to set the jump speed
 		int force = 8; // force of the jump in an integer
 		int score = 0; // default score int set to 0
-		int coins = 0; // default coins int set to 0
+	
 
 		int playSpeed = 18; // this int will set the character's speed to 18
 		int backLeft = 8; // this integer will set the background moving speed to 8
@@ -87,8 +87,9 @@ namespace CptSideScrollerTristanR
 				// when they are found it will move them towards the left 
 				foreach (Control x in this.Controls)
 				{
-					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" || x
 						is PictureBox && x.Tag == "key")
+					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" || 
+						x is PictureBox && x.Tag == "key")
 					{
 						x.Left -= backLeft;
 					}
@@ -130,7 +131,7 @@ namespace CptSideScrollerTristanR
 						player.Top = x.Top - player.Height; // also we place the player on top of the picture box
 						jumpSpeed = 0; // set the jump speed to 0
 					}
-					
+
 				}
 				// if the picture box found has a tag of a coin 
 				if (x is PictureBox && x.Tag == "coin")
@@ -140,12 +141,14 @@ namespace CptSideScrollerTristanR
 					{
 						this.Controls.Remove(x); // then we are going to remove the coin image 
 						score++; // add 1 to the score
-						coins++; // add 1 to the coins collected
+
 					}
+				}
+			}
 
 					// if the player collides with the door and has key boolean is true
 
-				    if (player.Bounds.IntersectsWith(door.Bounds) && hasKey )
+				    if (player.Bounds.IntersectsWith(door.Bounds) && hasKey  )
 					{
 						// then we change the image of the door to open 
 						door.Image = Properties.Resources.Open_Door;
@@ -176,9 +179,6 @@ namespace CptSideScrollerTristanR
 				
 
 				}
-			}
-
-		}
 
 		private void keyisdown(object sender, KeyEventArgs e)
 		{
