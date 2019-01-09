@@ -93,7 +93,7 @@ namespace CptSideScrollerTristanR
 				foreach (Control x in this.Controls)
 				{
 					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" || 
-						x is PictureBox && x.Tag == "key" || x is PictureBox && x.Tag == "armor")
+						x is PictureBox && x.Tag == "key" || x is PictureBox && x.Tag == "armor" || x is PictureBox && x.Tag == "flame")
 					{
 						x.Left -= backLeft;
 					}
@@ -112,7 +112,7 @@ namespace CptSideScrollerTristanR
 				foreach (Control x in this.Controls)
 				{
 					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" ||
-						x is PictureBox && x.Tag == "key" || x is PictureBox && x.Tag == "armor")
+						x is PictureBox && x.Tag == "key" || x is PictureBox && x.Tag == "armor" || x is PictureBox && x.Tag == "flame")
 					{
 						x.Left += backLeft;
 					}
@@ -148,27 +148,19 @@ namespace CptSideScrollerTristanR
 
 					}
 				}
-				// if the picture box found has a tag of a coin 
-				if (x is PictureBox && x.Tag == "armor")
-				{
-					// now if the player collides with the pic box
-					if (player.Bounds.IntersectsWith(x.Bounds))
-					{
-						this.Controls.Remove(x); // then we are going to remove the armor image 
-						player.Image = Properties.Resources.newPlayer;
-					}
-				}
+				
 			}
 
 					// if the player collides with the door and has key boolean is true
 
-				    if (player.Bounds.IntersectsWith(door.Bounds) && hasKey  )
+				    if (player.Bounds.IntersectsWith(door.Bounds) && hasKey )
 					{
-						// then we change the image of the door to open 
-						door.Image = Properties.Resources.Open_Door;
-						// and stop the timer
-						gameTimer.Stop();
-						MessageBox.Show("You Completed the level!!"); // show the message box
+					// then we change the image of the door to open 
+					door.Image = Properties.Resources.portal;
+					// and stop the timer
+					gameTimer.Stop();
+					MessageBox.Show("You Completed the level!!"); // show the message box
+					
 
 					}
 					
@@ -176,16 +168,26 @@ namespace CptSideScrollerTristanR
 
 						if (player.Bounds.IntersectsWith(key.Bounds))
 						{
-							// then we remove the key from the game
-							this.Controls.Remove(key);
 							// change the has key boolean to true
 							hasKey = true;
+							
+							// then we remove the key from the game
+							this.Controls.Remove(key);
+						
 						}
-					
-					
-					// this is where the player dies
-					// if the player goes below the forms height then we will end the game
-					if (player.Top + player.Height > this.ClientSize.Height + 60)
+			
+				// now if the player collides with the pic box
+				if (player.Bounds.IntersectsWith(armor.Bounds))
+				{
+					this.Controls.Remove(armor); // then we are going to remove the armor image 
+					player.Image = Properties.Resources.newPlayer;
+				}
+			
+
+
+				// this is where the player dies
+				// if the player goes below the forms height then we will end the game
+				if (player.Top + player.Height > this.ClientSize.Height + 60)
 					{
 						gameTimer.Stop();// stop the timer
 						MessageBox.Show("You Died!!!"); // show the message box
