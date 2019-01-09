@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
+
 namespace CptSideScrollerTristanR
 {
 	public partial class Form3 : Form
@@ -30,6 +33,8 @@ namespace CptSideScrollerTristanR
 		{
 			InitializeComponent();
 		}
+
+		
 
 		private void mainGameTimer(object sender, EventArgs e)
 		{
@@ -88,7 +93,7 @@ namespace CptSideScrollerTristanR
 				foreach (Control x in this.Controls)
 				{
 					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" || 
-						x is PictureBox && x.Tag == "key")
+						x is PictureBox && x.Tag == "key" || x is PictureBox && x.Tag == "armor")
 					{
 						x.Left -= backLeft;
 					}
@@ -107,7 +112,7 @@ namespace CptSideScrollerTristanR
 				foreach (Control x in this.Controls)
 				{
 					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" ||
-						x is PictureBox && x.Tag == "key")
+						x is PictureBox && x.Tag == "key" || x is PictureBox && x.Tag == "armor")
 					{
 						x.Left += backLeft;
 					}
@@ -143,6 +148,16 @@ namespace CptSideScrollerTristanR
 
 					}
 				}
+				// if the picture box found has a tag of a coin 
+				if (x is PictureBox && x.Tag == "armor")
+				{
+					// now if the player collides with the pic box
+					if (player.Bounds.IntersectsWith(x.Bounds))
+					{
+						this.Controls.Remove(x); // then we are going to remove the armor image 
+						player.Image = Properties.Resources.newPlayer;
+					}
+				}
 			}
 
 					// if the player collides with the door and has key boolean is true
@@ -156,6 +171,7 @@ namespace CptSideScrollerTristanR
 						MessageBox.Show("You Completed the level!!"); // show the message box
 
 					}
+					
 					// if the player collides with the key picture box
 
 						if (player.Bounds.IntersectsWith(key.Bounds))

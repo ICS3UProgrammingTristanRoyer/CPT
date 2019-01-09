@@ -30,6 +30,9 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.gameTimer = new System.Windows.Forms.Timer(this.components);
+			this.txtCoins = new System.Windows.Forms.Label();
+			this.armor = new System.Windows.Forms.PictureBox();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.pictureBox27 = new System.Windows.Forms.PictureBox();
 			this.pictureBox26 = new System.Windows.Forms.PictureBox();
 			this.pictureBox25 = new System.Windows.Forms.PictureBox();
@@ -57,8 +60,8 @@
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.background = new System.Windows.Forms.PictureBox();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.txtCoins = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.armor)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
@@ -86,7 +89,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// gameTimer
@@ -95,10 +97,42 @@
 			this.gameTimer.Interval = 20;
 			this.gameTimer.Tick += new System.EventHandler(this.mainGameTimer);
 			// 
+			// txtCoins
+			// 
+			this.txtCoins.AutoSize = true;
+			this.txtCoins.BackColor = System.Drawing.Color.DarkBlue;
+			this.txtCoins.ForeColor = System.Drawing.Color.DarkRed;
+			this.txtCoins.Location = new System.Drawing.Point(2214, 9);
+			this.txtCoins.Name = "txtCoins";
+			this.txtCoins.Size = new System.Drawing.Size(36, 13);
+			this.txtCoins.TabIndex = 29;
+			this.txtCoins.Text = "Coins:";
+			// 
+			// armor
+			// 
+			this.armor.Image = global::CptSideScrollerTristanR.Properties.Resources.newPlayer;
+			this.armor.Location = new System.Drawing.Point(495, 351);
+			this.armor.Name = "armor";
+			this.armor.Size = new System.Drawing.Size(58, 60);
+			this.armor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.armor.TabIndex = 30;
+			this.armor.TabStop = false;
+			this.armor.Tag = "armor";
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
+			this.pictureBox1.Location = new System.Drawing.Point(3348, 176);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(125, 29);
+			this.pictureBox1.TabIndex = 28;
+			this.pictureBox1.TabStop = false;
+			this.pictureBox1.Tag = "platform";
+			// 
 			// pictureBox27
 			// 
 			this.pictureBox27.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
-			this.pictureBox27.Location = new System.Drawing.Point(1730, 65);
+			this.pictureBox27.Location = new System.Drawing.Point(3465, 65);
 			this.pictureBox27.Name = "pictureBox27";
 			this.pictureBox27.Size = new System.Drawing.Size(127, 29);
 			this.pictureBox27.TabIndex = 27;
@@ -108,7 +142,7 @@
 			// pictureBox26
 			// 
 			this.pictureBox26.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
-			this.pictureBox26.Location = new System.Drawing.Point(1485, 289);
+			this.pictureBox26.Location = new System.Drawing.Point(3220, 289);
 			this.pictureBox26.Name = "pictureBox26";
 			this.pictureBox26.Size = new System.Drawing.Size(125, 29);
 			this.pictureBox26.TabIndex = 26;
@@ -117,8 +151,8 @@
 			// 
 			// pictureBox25
 			// 
-			this.pictureBox25.Image = global::CptSideScrollerTristanR.Properties.Resources.coin;
-			this.pictureBox25.Location = new System.Drawing.Point(1530, 253);
+			this.pictureBox25.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox25.Location = new System.Drawing.Point(3265, 253);
 			this.pictureBox25.Name = "pictureBox25";
 			this.pictureBox25.Size = new System.Drawing.Size(33, 30);
 			this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -128,8 +162,8 @@
 			// 
 			// pictureBox24
 			// 
-			this.pictureBox24.Image = global::CptSideScrollerTristanR.Properties.Resources.coin;
-			this.pictureBox24.Location = new System.Drawing.Point(1438, 411);
+			this.pictureBox24.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox24.Location = new System.Drawing.Point(3173, 411);
 			this.pictureBox24.Name = "pictureBox24";
 			this.pictureBox24.Size = new System.Drawing.Size(33, 30);
 			this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -139,8 +173,8 @@
 			// 
 			// pictureBox23
 			// 
-			this.pictureBox23.Image = global::CptSideScrollerTristanR.Properties.Resources.coin;
-			this.pictureBox23.Location = new System.Drawing.Point(1402, 371);
+			this.pictureBox23.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox23.Location = new System.Drawing.Point(3137, 371);
 			this.pictureBox23.Name = "pictureBox23";
 			this.pictureBox23.Size = new System.Drawing.Size(33, 30);
 			this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -150,8 +184,8 @@
 			// 
 			// pictureBox22
 			// 
-			this.pictureBox22.Image = global::CptSideScrollerTristanR.Properties.Resources.coin;
-			this.pictureBox22.Location = new System.Drawing.Point(1354, 336);
+			this.pictureBox22.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox22.Location = new System.Drawing.Point(3089, 336);
 			this.pictureBox22.Name = "pictureBox22";
 			this.pictureBox22.Size = new System.Drawing.Size(33, 30);
 			this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -161,8 +195,8 @@
 			// 
 			// pictureBox21
 			// 
-			this.pictureBox21.Image = global::CptSideScrollerTristanR.Properties.Resources.coin;
-			this.pictureBox21.Location = new System.Drawing.Point(1310, 371);
+			this.pictureBox21.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox21.Location = new System.Drawing.Point(3045, 371);
 			this.pictureBox21.Name = "pictureBox21";
 			this.pictureBox21.Size = new System.Drawing.Size(33, 30);
 			this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -172,8 +206,8 @@
 			// 
 			// pictureBox20
 			// 
-			this.pictureBox20.Image = global::CptSideScrollerTristanR.Properties.Resources.coin;
-			this.pictureBox20.Location = new System.Drawing.Point(1354, 411);
+			this.pictureBox20.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox20.Location = new System.Drawing.Point(3089, 411);
 			this.pictureBox20.Name = "pictureBox20";
 			this.pictureBox20.Size = new System.Drawing.Size(33, 30);
 			this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -183,8 +217,8 @@
 			// 
 			// pictureBox19
 			// 
-			this.pictureBox19.Image = global::CptSideScrollerTristanR.Properties.Resources.coin;
-			this.pictureBox19.Location = new System.Drawing.Point(1267, 411);
+			this.pictureBox19.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox19.Location = new System.Drawing.Point(3002, 411);
 			this.pictureBox19.Name = "pictureBox19";
 			this.pictureBox19.Size = new System.Drawing.Size(33, 30);
 			this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -195,7 +229,7 @@
 			// pictureBox18
 			// 
 			this.pictureBox18.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
-			this.pictureBox18.Location = new System.Drawing.Point(1236, 447);
+			this.pictureBox18.Location = new System.Drawing.Point(1363, 432);
 			this.pictureBox18.Name = "pictureBox18";
 			this.pictureBox18.Size = new System.Drawing.Size(290, 29);
 			this.pictureBox18.TabIndex = 18;
@@ -205,7 +239,7 @@
 			// pictureBox17
 			// 
 			this.pictureBox17.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
-			this.pictureBox17.Location = new System.Drawing.Point(1154, 161);
+			this.pictureBox17.Location = new System.Drawing.Point(2889, 161);
 			this.pictureBox17.Name = "pictureBox17";
 			this.pictureBox17.Size = new System.Drawing.Size(112, 50);
 			this.pictureBox17.TabIndex = 17;
@@ -215,7 +249,7 @@
 			// pictureBox16
 			// 
 			this.pictureBox16.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
-			this.pictureBox16.Location = new System.Drawing.Point(1070, 280);
+			this.pictureBox16.Location = new System.Drawing.Point(2805, 280);
 			this.pictureBox16.Name = "pictureBox16";
 			this.pictureBox16.Size = new System.Drawing.Size(112, 50);
 			this.pictureBox16.TabIndex = 16;
@@ -224,8 +258,8 @@
 			// 
 			// pictureBox15
 			// 
-			this.pictureBox15.Image = global::CptSideScrollerTristanR.Properties.Resources.coin;
-			this.pictureBox15.Location = new System.Drawing.Point(1194, 127);
+			this.pictureBox15.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox15.Location = new System.Drawing.Point(2929, 127);
 			this.pictureBox15.Name = "pictureBox15";
 			this.pictureBox15.Size = new System.Drawing.Size(33, 30);
 			this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -235,8 +269,8 @@
 			// 
 			// pictureBox14
 			// 
-			this.pictureBox14.Image = global::CptSideScrollerTristanR.Properties.Resources.coin;
-			this.pictureBox14.Location = new System.Drawing.Point(826, 264);
+			this.pictureBox14.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox14.Location = new System.Drawing.Point(2561, 264);
 			this.pictureBox14.Name = "pictureBox14";
 			this.pictureBox14.Size = new System.Drawing.Size(35, 30);
 			this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -247,7 +281,7 @@
 			// pictureBox13
 			// 
 			this.pictureBox13.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
-			this.pictureBox13.Location = new System.Drawing.Point(788, 300);
+			this.pictureBox13.Location = new System.Drawing.Point(2523, 300);
 			this.pictureBox13.Name = "pictureBox13";
 			this.pictureBox13.Size = new System.Drawing.Size(112, 50);
 			this.pictureBox13.TabIndex = 13;
@@ -256,8 +290,8 @@
 			// 
 			// pictureBox12
 			// 
-			this.pictureBox12.Image = global::CptSideScrollerTristanR.Properties.Resources.coin;
-			this.pictureBox12.Location = new System.Drawing.Point(551, 125);
+			this.pictureBox12.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox12.Location = new System.Drawing.Point(2286, 125);
 			this.pictureBox12.Name = "pictureBox12";
 			this.pictureBox12.Size = new System.Drawing.Size(35, 30);
 			this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -268,7 +302,7 @@
 			// pictureBox9
 			// 
 			this.pictureBox9.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
-			this.pictureBox9.Location = new System.Drawing.Point(508, 161);
+			this.pictureBox9.Location = new System.Drawing.Point(2243, 161);
 			this.pictureBox9.Name = "pictureBox9";
 			this.pictureBox9.Size = new System.Drawing.Size(112, 50);
 			this.pictureBox9.TabIndex = 11;
@@ -277,8 +311,8 @@
 			// 
 			// pictureBox8
 			// 
-			this.pictureBox8.Image = global::CptSideScrollerTristanR.Properties.Resources.coin;
-			this.pictureBox8.Location = new System.Drawing.Point(265, 211);
+			this.pictureBox8.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox8.Location = new System.Drawing.Point(485, 268);
 			this.pictureBox8.Name = "pictureBox8";
 			this.pictureBox8.Size = new System.Drawing.Size(35, 30);
 			this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -289,7 +323,7 @@
 			// pictureBox11
 			// 
 			this.pictureBox11.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
-			this.pictureBox11.Location = new System.Drawing.Point(441, 336);
+			this.pictureBox11.Location = new System.Drawing.Point(1024, 320);
 			this.pictureBox11.Name = "pictureBox11";
 			this.pictureBox11.Size = new System.Drawing.Size(112, 50);
 			this.pictureBox11.TabIndex = 9;
@@ -299,7 +333,7 @@
 			// pictureBox10
 			// 
 			this.pictureBox10.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
-			this.pictureBox10.Location = new System.Drawing.Point(12, 127);
+			this.pictureBox10.Location = new System.Drawing.Point(0, 164);
 			this.pictureBox10.Name = "pictureBox10";
 			this.pictureBox10.Size = new System.Drawing.Size(112, 50);
 			this.pictureBox10.TabIndex = 8;
@@ -309,7 +343,7 @@
 			// player
 			// 
 			this.player.Image = global::CptSideScrollerTristanR.Properties.Resources.player;
-			this.player.Location = new System.Drawing.Point(49, 369);
+			this.player.Location = new System.Drawing.Point(0, 351);
 			this.player.Name = "player";
 			this.player.Size = new System.Drawing.Size(50, 60);
 			this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -319,8 +353,9 @@
 			// 
 			// key
 			// 
-			this.key.Image = global::CptSideScrollerTristanR.Properties.Resources.key1;
-			this.key.Location = new System.Drawing.Point(1750, 12);
+			this.key.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.purpleFlames;
+			this.key.Image = global::CptSideScrollerTristanR.Properties.Resources.key2;
+			this.key.Location = new System.Drawing.Point(3485, 12);
 			this.key.Name = "key";
 			this.key.Size = new System.Drawing.Size(90, 47);
 			this.key.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -330,8 +365,8 @@
 			// 
 			// coin
 			// 
-			this.coin.Image = global::CptSideScrollerTristanR.Properties.Resources.coin;
-			this.coin.Location = new System.Drawing.Point(482, 300);
+			this.coin.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.coin.Location = new System.Drawing.Point(1061, 293);
 			this.coin.Name = "coin";
 			this.coin.Size = new System.Drawing.Size(35, 30);
 			this.coin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -342,7 +377,7 @@
 			// door
 			// 
 			this.door.Image = global::CptSideScrollerTristanR.Properties.Resources.Closed_Door;
-			this.door.Location = new System.Drawing.Point(43, 65);
+			this.door.Location = new System.Drawing.Point(24, 105);
 			this.door.Name = "door";
 			this.door.Size = new System.Drawing.Size(56, 62);
 			this.door.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -353,7 +388,7 @@
 			// pictureBox3
 			// 
 			this.pictureBox3.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
-			this.pictureBox3.Location = new System.Drawing.Point(229, 258);
+			this.pictureBox3.Location = new System.Drawing.Point(444, 295);
 			this.pictureBox3.Name = "pictureBox3";
 			this.pictureBox3.Size = new System.Drawing.Size(109, 50);
 			this.pictureBox3.TabIndex = 2;
@@ -363,7 +398,7 @@
 			// pictureBox2
 			// 
 			this.pictureBox2.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
-			this.pictureBox2.Location = new System.Drawing.Point(0, 426);
+			this.pictureBox2.Location = new System.Drawing.Point(0, 408);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(553, 58);
 			this.pictureBox2.TabIndex = 1;
@@ -380,32 +415,13 @@
 			this.background.TabIndex = 0;
 			this.background.TabStop = false;
 			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
-			this.pictureBox1.Location = new System.Drawing.Point(1613, 176);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(125, 29);
-			this.pictureBox1.TabIndex = 28;
-			this.pictureBox1.TabStop = false;
-			this.pictureBox1.Tag = "platform";
-			// 
-			// txtCoins
-			// 
-			this.txtCoins.AutoSize = true;
-			this.txtCoins.BackColor = System.Drawing.Color.DarkBlue;
-			this.txtCoins.ForeColor = System.Drawing.Color.DarkRed;
-			this.txtCoins.Location = new System.Drawing.Point(479, 9);
-			this.txtCoins.Name = "txtCoins";
-			this.txtCoins.Size = new System.Drawing.Size(36, 13);
-			this.txtCoins.TabIndex = 29;
-			this.txtCoins.Text = "Coins:";
-			// 
 			// Form3
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1924, 481);
+			this.AutoScroll = true;
+			this.ClientSize = new System.Drawing.Size(1301, 481);
+			this.Controls.Add(this.armor);
 			this.Controls.Add(this.txtCoins);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.pictureBox27);
@@ -439,6 +455,8 @@
 			this.Text = "Form3";
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
 			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
+			((System.ComponentModel.ISupportInitialize)(this.armor)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
@@ -466,7 +484,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -504,5 +521,6 @@
 		private System.Windows.Forms.Timer gameTimer;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label txtCoins;
+		private System.Windows.Forms.PictureBox armor;
 	}
 }
