@@ -64,6 +64,7 @@
 			this.pictureBox5 = new System.Windows.Forms.PictureBox();
 			this.pictureBox6 = new System.Windows.Forms.PictureBox();
 			this.pictureBox7 = new System.Windows.Forms.PictureBox();
+			this.lblCoins = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.armor)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
@@ -467,11 +468,24 @@
 			this.pictureBox7.TabStop = false;
 			this.pictureBox7.Tag = "flame";
 			// 
+			// lblCoins
+			// 
+			this.lblCoins.AutoSize = true;
+			this.lblCoins.BackColor = System.Drawing.SystemColors.MenuHighlight;
+			this.lblCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblCoins.ForeColor = System.Drawing.Color.DarkRed;
+			this.lblCoins.Location = new System.Drawing.Point(482, 9);
+			this.lblCoins.Name = "lblCoins";
+			this.lblCoins.Size = new System.Drawing.Size(61, 16);
+			this.lblCoins.TabIndex = 35;
+			this.lblCoins.Text = "Coins:--";
+			// 
 			// Form3
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(598, 481);
+			this.Controls.Add(this.lblCoins);
 			this.Controls.Add(this.pictureBox7);
 			this.Controls.Add(this.pictureBox6);
 			this.Controls.Add(this.pictureBox5);
@@ -585,5 +599,6 @@
 		private System.Windows.Forms.PictureBox pictureBox5;
 		private System.Windows.Forms.PictureBox pictureBox6;
 		private System.Windows.Forms.PictureBox pictureBox7;
+		private System.Windows.Forms.Label lblCoins;
 	}
 }

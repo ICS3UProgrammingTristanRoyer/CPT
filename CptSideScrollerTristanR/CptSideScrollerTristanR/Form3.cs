@@ -7,7 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
+using System.Threading;
 using System.Windows.Media;
+
+
 
 
 
@@ -28,26 +32,24 @@ namespace CptSideScrollerTristanR
 
 		int playSpeed = 18; // this int will set the character's speed to 18
 		int backLeft = 8; // this integer will set the background moving speed to 8
+		System.Media.SoundPlayer backSound = new System.Media.SoundPlayer();
+		
 
 
 		public Form3()
 		{
 
+			backSound.SoundLocation = "night.wav";
+
 			InitializeComponent();
-			PlayLooping(Application.StartupPath + "bat.wav");
+			backSound.PlayLooping();
 
-		}
 
-		public void Play(string audioPath)
-		{
-			MediaPlayer myPlayer = new MediaPlayer();
-			myPlayer.Open(new System.Uri(audioPath));
-			myPlayer.Play();
 		}
 
 
 
-
+		
 		private void mainGameTimer(object sender, EventArgs e)
 		{
 
@@ -156,8 +158,13 @@ namespace CptSideScrollerTristanR
 					// now if the player collides with the pic box
 					if (player.Bounds.IntersectsWith(x.Bounds))
 					{
+
+
 						this.Controls.Remove(x); // then we are going to remove the coin image 
 						score++; // add 1 to the score
+						lblCoins.Text = ("Coins:" + score);
+						
+
 
 					}
 				}
