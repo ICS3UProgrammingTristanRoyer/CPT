@@ -362,7 +362,6 @@
 			// 
 			// key
 			// 
-			this.key.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.purpleFlames;
 			this.key.Image = global::CptSideScrollerTristanR.Properties.Resources.key2;
 			this.key.Location = new System.Drawing.Point(1751, 25);
 			this.key.Name = "key";
@@ -386,7 +385,7 @@
 			// door
 			// 
 			this.door.Image = global::CptSideScrollerTristanR.Properties.Resources.Closed_Door;
-			this.door.Location = new System.Drawing.Point(24, 105);
+			this.door.Location = new System.Drawing.Point(56, 105);
 			this.door.Name = "door";
 			this.door.Size = new System.Drawing.Size(56, 62);
 			this.door.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

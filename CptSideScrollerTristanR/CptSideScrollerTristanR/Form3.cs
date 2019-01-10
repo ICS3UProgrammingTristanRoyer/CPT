@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Windows.Media;
 
 
 
@@ -29,15 +29,28 @@ namespace CptSideScrollerTristanR
 		int playSpeed = 18; // this int will set the character's speed to 18
 		int backLeft = 8; // this integer will set the background moving speed to 8
 
+
 		public Form3()
 		{
+
 			InitializeComponent();
+			PlayLooping(Application.StartupPath + "bat.wav");
+
 		}
 
-		
+		public void Play(string audioPath)
+		{
+			MediaPlayer myPlayer = new MediaPlayer();
+			myPlayer.Open(new System.Uri(audioPath));
+			myPlayer.Play();
+		}
+
+
+
 
 		private void mainGameTimer(object sender, EventArgs e)
 		{
+
 			// linking the jumpspeed integer with the player picture boxes to location
 			player.Top += jumpSpeed;
 
@@ -155,7 +168,6 @@ namespace CptSideScrollerTristanR
 
 				    if (player.Bounds.IntersectsWith(door.Bounds) && hasKey )
 					{
-					// then we change the image of the door to open 
 					door.Image = Properties.Resources.portal;
 					// and stop the timer
 					gameTimer.Stop();
@@ -168,12 +180,11 @@ namespace CptSideScrollerTristanR
 
 						if (player.Bounds.IntersectsWith(key.Bounds))
 						{
-							// change the has key boolean to true
-							hasKey = true;
-							
 							// then we remove the key from the game
 							this.Controls.Remove(key);
-						
+							// change the has key boolean to true
+							hasKey = true;
+
 						}
 			
 				// now if the player collides with the pic box
