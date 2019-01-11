@@ -29,24 +29,15 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.prbProgressBar = new System.Windows.Forms.ProgressBar();
 			this.timer = new System.Windows.Forms.Timer(this.components);
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = global::CptSideScrollerTristanR.Properties.Resources.Background;
-			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(2000, 600);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
-			// 
 			// prbProgressBar
 			// 
+			this.prbProgressBar.BackColor = System.Drawing.Color.DarkRed;
 			this.prbProgressBar.Location = new System.Drawing.Point(248, 238);
 			this.prbProgressBar.Name = "prbProgressBar";
 			this.prbProgressBar.Size = new System.Drawing.Size(100, 23);
@@ -56,6 +47,16 @@
 			// 
 			this.timer.Enabled = true;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = global::CptSideScrollerTristanR.Properties.Resources.purpleFlames;
+			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(600, 484);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 0;
+			this.pictureBox1.TabStop = false;
 			// 
 			// Form2
 			// 
@@ -71,7 +72,6 @@
 			this.Text = "Form2";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 

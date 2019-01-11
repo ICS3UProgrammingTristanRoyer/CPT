@@ -36,10 +36,9 @@ namespace CptSideScrollerTristanR
 		int playSpeed = 18; // this int will set the character's speed to 18
 		int backLeft = 8; // this integer will set the background moving speed to 8
 		System.Media.SoundPlayer backSound = new System.Media.SoundPlayer();
-		SoundPlayer wowSound = new SoundPlayer(@"coin.wav"); //Initialize a new SoundPlayer of name wowSound
-		SoundPlayer countingSound = new SoundPlayer(@"soundEffect/funny.wav"); //Initialize a new SoundPlayer of name wowSound
-		wowSound.Play(); //Play soundEffect/Wow.wav synchronously
-countingSound.PlaySync();  //Play soundEffect/funny.wav synchronously 
+
+
+	
 
 		 //Play the media
 		//System.IO.Stream stream = Properties.Resources.coin;
@@ -54,15 +53,23 @@ countingSound.PlaySync();  //Play soundEffect/funny.wav synchronously
 		public Form3()
 		{
 
-			backSound.SoundLocation = "night";
+			backSound.SoundLocation = "night.wav";
 
 			InitializeComponent();
 			backSound.PlayLooping();
+			//pictureBox15.BackColor = System.Drawing.Color.Transparent;
+			//this.BackColor = System.Drawing.Color.Transparent;
 
 
 		}
 
-		
+		private void Play(string audioPath)
+		{
+			MediaPlayer myPlayer = new MediaPlayer();
+			myPlayer.Open(new System.Uri(audioPath));
+			myPlayer.Play();
+		}
+
 
 
 
@@ -169,13 +176,13 @@ countingSound.PlaySync();  //Play soundEffect/funny.wav synchronously
 
 				}
 				// if the picture box found has a tag of a coin 
-				if (x is PictureBox && x.Tag == "coin")
+				if (x is PictureBox &&(String) x.Tag == "coin")
 				{
 					// now if the player collides with the pic box
 					if (player.Bounds.IntersectsWith(x.Bounds))
 					{
-
-
+						Play(Application.StartupPath + "\\Coin.mp3");
+						Console.WriteLine("Played coin sound at: " + Application.StartupPath + "\\coin.wav");
 						this.Controls.Remove(x); // then we are going to remove the coin image 
 						score++; // add 1 to the score
 						lblCoins.Text = ("Coins:" + score);
@@ -203,8 +210,12 @@ countingSound.PlaySync();  //Play soundEffect/funny.wav synchronously
 
 						if (player.Bounds.IntersectsWith(key.Bounds))
 						{
-							// then we remove the key from the game
-							this.Controls.Remove(key);
+				// play sound
+				Play(Application.StartupPath + "coin.wav");
+
+
+				// then we remove the key from the game
+				this.Controls.Remove(key);
 							// change the has key boolean to true
 							hasKey = true;
 

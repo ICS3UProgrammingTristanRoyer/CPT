@@ -161,7 +161,8 @@
 			// 
 			// pictureBox25
 			// 
-			this.pictureBox25.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox25.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox25.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
 			this.pictureBox25.Location = new System.Drawing.Point(1649, 300);
 			this.pictureBox25.Name = "pictureBox25";
 			this.pictureBox25.Size = new System.Drawing.Size(33, 30);
@@ -172,7 +173,9 @@
 			// 
 			// pictureBox24
 			// 
-			this.pictureBox24.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox24.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox24.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.coin2;
+			this.pictureBox24.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
 			this.pictureBox24.Location = new System.Drawing.Point(1583, 404);
 			this.pictureBox24.Name = "pictureBox24";
 			this.pictureBox24.Size = new System.Drawing.Size(33, 30);
@@ -183,7 +186,8 @@
 			// 
 			// pictureBox23
 			// 
-			this.pictureBox23.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox23.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox23.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
 			this.pictureBox23.Location = new System.Drawing.Point(1547, 364);
 			this.pictureBox23.Name = "pictureBox23";
 			this.pictureBox23.Size = new System.Drawing.Size(33, 30);
@@ -194,7 +198,8 @@
 			// 
 			// pictureBox22
 			// 
-			this.pictureBox22.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox22.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox22.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
 			this.pictureBox22.Location = new System.Drawing.Point(1499, 329);
 			this.pictureBox22.Name = "pictureBox22";
 			this.pictureBox22.Size = new System.Drawing.Size(33, 30);
@@ -205,7 +210,8 @@
 			// 
 			// pictureBox21
 			// 
-			this.pictureBox21.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox21.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox21.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
 			this.pictureBox21.Location = new System.Drawing.Point(1455, 364);
 			this.pictureBox21.Name = "pictureBox21";
 			this.pictureBox21.Size = new System.Drawing.Size(33, 30);
@@ -216,7 +222,8 @@
 			// 
 			// pictureBox20
 			// 
-			this.pictureBox20.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox20.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox20.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
 			this.pictureBox20.Location = new System.Drawing.Point(1499, 404);
 			this.pictureBox20.Name = "pictureBox20";
 			this.pictureBox20.Size = new System.Drawing.Size(33, 30);
@@ -227,7 +234,8 @@
 			// 
 			// pictureBox19
 			// 
-			this.pictureBox19.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox19.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox19.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
 			this.pictureBox19.Location = new System.Drawing.Point(1412, 404);
 			this.pictureBox19.Name = "pictureBox19";
 			this.pictureBox19.Size = new System.Drawing.Size(33, 30);
@@ -268,7 +276,8 @@
 			// 
 			// pictureBox15
 			// 
-			this.pictureBox15.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox15.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
 			this.pictureBox15.Location = new System.Drawing.Point(253, 179);
 			this.pictureBox15.Name = "pictureBox15";
 			this.pictureBox15.Size = new System.Drawing.Size(37, 30);
@@ -279,7 +288,8 @@
 			// 
 			// pictureBox14
 			// 
-			this.pictureBox14.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox14.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
 			this.pictureBox14.Location = new System.Drawing.Point(1322, 293);
 			this.pictureBox14.Name = "pictureBox14";
 			this.pictureBox14.Size = new System.Drawing.Size(35, 30);
@@ -300,7 +310,8 @@
 			// 
 			// pictureBox12
 			// 
-			this.pictureBox12.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox12.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
 			this.pictureBox12.Location = new System.Drawing.Point(1627, 208);
 			this.pictureBox12.Name = "pictureBox12";
 			this.pictureBox12.Size = new System.Drawing.Size(35, 30);
@@ -321,7 +332,8 @@
 			// 
 			// pictureBox8
 			// 
-			this.pictureBox8.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox8.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
 			this.pictureBox8.Location = new System.Drawing.Point(485, 268);
 			this.pictureBox8.Name = "pictureBox8";
 			this.pictureBox8.Size = new System.Drawing.Size(35, 30);
@@ -363,6 +375,7 @@
 			// 
 			// key
 			// 
+			this.key.BackColor = System.Drawing.Color.Transparent;
 			this.key.Image = global::CptSideScrollerTristanR.Properties.Resources.key2;
 			this.key.Location = new System.Drawing.Point(1751, 25);
 			this.key.Name = "key";
@@ -374,7 +387,8 @@
 			// 
 			// coin
 			// 
-			this.coin.Image = global::CptSideScrollerTristanR.Properties.Resources.newCoin;
+			this.coin.BackColor = System.Drawing.Color.Transparent;
+			this.coin.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
 			this.coin.Location = new System.Drawing.Point(1061, 293);
 			this.coin.Name = "coin";
 			this.coin.Size = new System.Drawing.Size(35, 30);
@@ -484,7 +498,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(598, 481);
+			this.ClientSize = new System.Drawing.Size(605, 481);
 			this.Controls.Add(this.lblCoins);
 			this.Controls.Add(this.pictureBox7);
 			this.Controls.Add(this.pictureBox6);
