@@ -10,7 +10,10 @@ using System.Windows.Forms;
 using System.Media;
 using System.Threading;
 using System.Windows.Media;
+using WMPLib;
 
+//https://stackoverflow.com/questions/13925840/how-to-play-two-sound-file-at-the-same-time-with-wpf
+//https://stackoverflow.com/questions/1285294/play-multiple-sounds-using-soundplayer
 
 
 
@@ -33,13 +36,25 @@ namespace CptSideScrollerTristanR
 		int playSpeed = 18; // this int will set the character's speed to 18
 		int backLeft = 8; // this integer will set the background moving speed to 8
 		System.Media.SoundPlayer backSound = new System.Media.SoundPlayer();
-		
+		SoundPlayer wowSound = new SoundPlayer(@"coin.wav"); //Initialize a new SoundPlayer of name wowSound
+		SoundPlayer countingSound = new SoundPlayer(@"soundEffect/funny.wav"); //Initialize a new SoundPlayer of name wowSound
+		wowSound.Play(); //Play soundEffect/Wow.wav synchronously
+countingSound.PlaySync();  //Play soundEffect/funny.wav synchronously 
+
+		 //Play the media
+		//System.IO.Stream stream = Properties.Resources.coin;
+		//MediaPlayer musicPlayer = new System.Windows.Media.MediaPlayer();
+		//musicPlayer.Open(new System.Uri(stream));  //This is not working
+		//musicPlayer.Play();
+
+
+
 
 
 		public Form3()
 		{
 
-			backSound.SoundLocation = "night.wav";
+			backSound.SoundLocation = "night";
 
 			InitializeComponent();
 			backSound.PlayLooping();
@@ -47,9 +62,10 @@ namespace CptSideScrollerTristanR
 
 		}
 
-
-
 		
+
+
+
 		private void mainGameTimer(object sender, EventArgs e)
 		{
 
