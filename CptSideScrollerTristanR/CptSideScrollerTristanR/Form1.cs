@@ -39,5 +39,13 @@ namespace CptSideScrollerTristanR
 			theForm.ShowDialog();
 			this.Close();
 		}
+
+		private void btnInstuctions_Click(object sender, EventArgs e)
+		{
+			Instructions theForm = new Instructions();
+			this.Hide();
+			theForm.ShowDialog();
+			this.Close();
+		}
 	}
 }

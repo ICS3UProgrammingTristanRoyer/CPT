@@ -57,13 +57,24 @@ namespace CptSideScrollerTristanR
 
 			InitializeComponent();
 			backSound.PlayLooping();
-			//pictureBox15.BackColor = System.Drawing.Color.Transparent;
-			//this.BackColor = System.Drawing.Color.Transparent;
+			
 
 
 		}
 
 		private void Play(string audioPath)
+		{
+			MediaPlayer myPlayer = new MediaPlayer();
+			myPlayer.Open(new System.Uri(audioPath));
+			myPlayer.Play();
+		}
+		private void Play2(string audioPath)
+		{
+			MediaPlayer myPlayer = new MediaPlayer();
+			myPlayer.Open(new System.Uri(audioPath));
+			myPlayer.Play();
+		}
+		private void Play3(string audioPath)
 		{
 			MediaPlayer myPlayer = new MediaPlayer();
 			myPlayer.Open(new System.Uri(audioPath));
@@ -181,7 +192,7 @@ namespace CptSideScrollerTristanR
 					// now if the player collides with the pic box
 					if (player.Bounds.IntersectsWith(x.Bounds))
 					{
-						Play(Application.StartupPath + "\\Coin.mp3");
+						Play(Application.StartupPath + "\\Coin.wav");
 						Console.WriteLine("Played coin sound at: " + Application.StartupPath + "\\coin.wav");
 						this.Controls.Remove(x); // then we are going to remove the coin image 
 						score++; // add 1 to the score
@@ -198,33 +209,39 @@ namespace CptSideScrollerTristanR
 
 				    if (player.Bounds.IntersectsWith(door.Bounds) && hasKey )
 					{
-					door.Image = Properties.Resources.portal;
 					// and stop the timer
 					gameTimer.Stop();
-					MessageBox.Show("You Completed the level!!"); // show the message box
-					
+					WinScreen theForm = new WinScreen();
+					this.Hide();
+					theForm.ShowDialog();
+					this.Close();
 
-					}
+			}
 					
 					// if the player collides with the key picture box
 
 						if (player.Bounds.IntersectsWith(key.Bounds))
 						{
-				// play sound
-				Play(Application.StartupPath + "coin.wav");
 
+							// play sound
+							Play3(Application.StartupPath + "\\Unlock.wav");
 
-				// then we remove the key from the game
-				this.Controls.Remove(key);
+							// changes the door to a portal
+							door.Image = Properties.Resources.portal;
+
+							// then we remove the key from the game
+							this.Controls.Remove(key);
 							// change the has key boolean to true
 							hasKey = true;
+							
 
 						}
 			
 				// now if the player collides with the pic box
 				if (player.Bounds.IntersectsWith(armor.Bounds))
 				{
-					this.Controls.Remove(armor); // then we are going to remove the armor image 
+				Play2(Application.StartupPath + "\\armor.wav");
+				this.Controls.Remove(armor); // then we are going to remove the armor image 
 					player.Image = Properties.Resources.newPlayer;
 				}
 			
@@ -234,10 +251,12 @@ namespace CptSideScrollerTristanR
 				// if the player goes below the forms height then we will end the game
 				if (player.Top + player.Height > this.ClientSize.Height + 60)
 					{
-						gameTimer.Stop();// stop the timer
-						MessageBox.Show("You Died!!!"); // show the message box
-
-					}
+					gameTimer.Stop();// stop the timer
+					LoseScreen theForm = new LoseScreen();
+					this.Hide();
+					theForm.ShowDialog();
+					this.Close();
+			}
 				
 
 				}
