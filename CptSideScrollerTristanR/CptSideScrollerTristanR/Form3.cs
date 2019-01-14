@@ -68,18 +68,7 @@ namespace CptSideScrollerTristanR
 			myPlayer.Open(new System.Uri(audioPath));
 			myPlayer.Play();
 		}
-		private void Play2(string audioPath)
-		{
-			MediaPlayer myPlayer = new MediaPlayer();
-			myPlayer.Open(new System.Uri(audioPath));
-			myPlayer.Play();
-		}
-		private void Play3(string audioPath)
-		{
-			MediaPlayer myPlayer = new MediaPlayer();
-			myPlayer.Open(new System.Uri(audioPath));
-			myPlayer.Play();
-		}
+	
 
 
 
@@ -224,7 +213,7 @@ namespace CptSideScrollerTristanR
 						{
 
 							// play sound
-							Play3(Application.StartupPath + "\\Unlock.wav");
+							Play(Application.StartupPath + "\\Unlock.wav");
 
 							// changes the door to a portal
 							door.Image = Properties.Resources.portal;
@@ -240,7 +229,7 @@ namespace CptSideScrollerTristanR
 				// now if the player collides with the pic box
 				if (player.Bounds.IntersectsWith(armor.Bounds))
 				{
-				Play2(Application.StartupPath + "\\armor.wav");
+				Play(Application.StartupPath + "\\armor.wav");
 				this.Controls.Remove(armor); // then we are going to remove the armor image 
 					player.Image = Properties.Resources.newPlayer;
 				}
