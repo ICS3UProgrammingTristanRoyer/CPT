@@ -12,17 +12,10 @@ using System.Threading;
 using System.Windows.Media;
 using WMPLib;
 
-//https://stackoverflow.com/questions/13925840/how-to-play-two-sound-file-at-the-same-time-with-wpf
-//https://stackoverflow.com/questions/1285294/play-multiple-sounds-using-soundplayer
-
-
-
-
 namespace CptSideScrollerTristanR
 {
-	public partial class Form3 : Form
+	public partial class Level2 : Form
 	{
-
 		bool goleft = false; // boolean which will control the character going left
 		bool goright = false; // boolean which will control the character going right
 		bool jumping = false; // boolean to check if the player is jumping or not
@@ -31,33 +24,21 @@ namespace CptSideScrollerTristanR
 		int jumpSpeed = 10; // int to set the jump speed
 		int force = 8; // force of the jump in an integer
 		int score = 0; // default score int set to 0
-	
+		int lives = 3;
+
 
 		int playSpeed = 18; // this int will set the character's speed to 18
 		int backLeft = 8; // this integer will set the background moving speed to 8
 		System.Media.SoundPlayer backSound = new System.Media.SoundPlayer();
 
-
-	
-
-		 //Play the media
-		//System.IO.Stream stream = Properties.Resources.coin;
-		//MediaPlayer musicPlayer = new System.Windows.Media.MediaPlayer();
-		//musicPlayer.Open(new System.Uri(stream));  //This is not working
-		//musicPlayer.Play();
-
-
-
-
-
-		public Form3()
+		public Level2()
 		{
 
 			backSound.SoundLocation = "night.wav";
 
 			InitializeComponent();
 			backSound.PlayLooping();
-			
+
 
 
 		}
@@ -68,7 +49,23 @@ namespace CptSideScrollerTristanR
 			myPlayer.Open(new System.Uri(audioPath));
 			myPlayer.Play();
 		}
-	
+		private void UpdateLives()
+		{
+			lives = lives - 1;
+			if (lives == 0)
+			{
+				// and stop the timer
+				gameTimer.Stop();
+				LoseScreen theForm = new LoseScreen();
+				this.Hide();
+				theForm.ShowDialog();
+				this.Close();
+			}
+
+			lblLives.Text = ("Lives:" + lives);
+			
+		}
+
 
 
 
@@ -130,7 +127,7 @@ namespace CptSideScrollerTristanR
 				// when they are found it will move them towards the left 
 				foreach (Control x in this.Controls)
 				{
-					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" || 
+					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" ||
 						x is PictureBox && x.Tag == "key" || x is PictureBox && x.Tag == "armor" || x is PictureBox && x.Tag == "flame")
 					{
 						x.Left -= backLeft;
@@ -176,7 +173,7 @@ namespace CptSideScrollerTristanR
 
 				}
 				// if the picture box found has a tag of a coin 
-				if (x is PictureBox &&(String) x.Tag == "coin")
+				if (x is PictureBox && (String)x.Tag == "bat")
 				{
 					// now if the player collides with the pic box
 					if (player.Bounds.IntersectsWith(x.Bounds))
@@ -184,71 +181,76 @@ namespace CptSideScrollerTristanR
 						Play(Application.StartupPath + "\\Coin.mp3");
 						Console.WriteLine("Played coin sound at: " + Application.StartupPath + "\\Coin.mp3");
 						this.Controls.Remove(x); // then we are going to remove the coin image 
-						score++; // add 1 to the score
-						lblCoins.Text = ("Coins:" + score);
-						
+						if (hasSword)
+						{
+							core++; // add 1 to the score
+							lblCoins.Text = ("Coins:" + score);
+						}
+						else if (hasSword = false)
+							UpdateLives()
+
 
 
 					}
 				}
-				
-			}
-
-					// if the player collides with the door and has key boolean is true
-
-				    if (player.Bounds.IntersectsWith(door.Bounds) && hasKey )
-					{
-					// and stop the timer
-					gameTimer.Stop();
-					WinScreen theForm = new WinScreen();
-					this.Hide();
-					theForm.ShowDialog();
-					this.Close();
 
 			}
-					
-					// if the player collides with the key picture box
 
-						if (player.Bounds.IntersectsWith(key.Bounds))
-						{
+			// if the player collides with the door and has key boolean is true
 
-							// play sound
-							//Play(Application.StartupPath + "\\Unlock.wav");
+			if (player.Bounds.IntersectsWith(door.Bounds) && hasKey)
+			{
+				// and stop the timer
+				gameTimer.Stop();
+				WinScreen theForm = new WinScreen();
+				this.Hide();
+				theForm.ShowDialog();
+				this.Close();
 
-							// changes the door to a portal
-							door.Image = Properties.Resources.portal_2;
+			}
 
-							// then we remove the key from the game
-							this.Controls.Remove(key);
-							// change the has key boolean to true
-							hasKey = true;
-							
+			// if the player collides with the key picture box
 
-						}
-			
-				// now if the player collides with the pic box
-				if (player.Bounds.IntersectsWith(armor.Bounds))
-				{
+			if (player.Bounds.IntersectsWith(key.Bounds))
+			{
+
+				// play sound
+				//Play(Application.StartupPath + "\\Unlock.wav");
+
+				// changes the door to a portal
+				door.Image = Properties.Resources.portal_2;
+
+				// then we remove the key from the game
+				this.Controls.Remove(key);
+				// change the has key boolean to true
+				hasKey = true;
+
+
+			}
+
+			// now if the player collides with the pic box
+			if (player.Bounds.IntersectsWith(sword.Bounds))
+			{
 				//Play(Application.StartupPath + "\\armor.wav");
-				this.Controls.Remove(armor); // then we are going to remove the armor image 
-					player.Image = Properties.Resources.newPlayer;
-				}
-			
-
-
-				// this is where the player dies
-				// if the player goes below the forms height then we will end the game
-				if (player.Top + player.Height > this.ClientSize.Height + 60)
-					{
-					gameTimer.Stop();// stop the timer
-					LoseScreen theForm = new LoseScreen();
-					this.Hide();
-					theForm.ShowDialog();
-					this.Close();
+				this.Controls.Remove(sword); // then we are going to remove the armor image 
+				player.Image = Properties.Resources.newPlayerSword;
 			}
-				
 
-				}
+
+
+			// this is where the player dies
+			// if the player goes below the forms height then we will end the game
+			if (player.Top + player.Height > this.ClientSize.Height + 60)
+			{
+				gameTimer.Stop();// stop the timer
+				LoseScreen theForm = new LoseScreen();
+				this.Hide();
+				theForm.ShowDialog();
+				this.Close();
+			}
+
+
+		}
 
 		private void keyisdown(object sender, KeyEventArgs e)
 		{
@@ -296,5 +298,12 @@ namespace CptSideScrollerTristanR
 			}
 
 		}
+
+		private void lblLives_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
+
+		

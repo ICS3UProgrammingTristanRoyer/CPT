@@ -72,6 +72,12 @@
     <Compile Include="Instructions.Designer.cs">
       <DependentUpon>Instructions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Level2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Level2.Designer.cs">
+      <DependentUpon>Level2.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoseScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Instructions.resx">
       <DependentUpon>Instructions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Level2.resx">
+      <DependentUpon>Level2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoseScreen.resx">
       <DependentUpon>LoseScreen.cs</DependentUpon>
@@ -179,6 +188,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\37-affinity-game-background-600.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portal 2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open Door.jif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bat.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newPlayerSword.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
