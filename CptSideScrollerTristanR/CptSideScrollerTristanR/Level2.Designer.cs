@@ -43,7 +43,7 @@
 			this.pictureBox11 = new System.Windows.Forms.PictureBox();
 			this.sword = new System.Windows.Forms.PictureBox();
 			this.pictureBox13 = new System.Windows.Forms.PictureBox();
-			this.pictureBox14 = new System.Windows.Forms.PictureBox();
+			this.monster = new System.Windows.Forms.PictureBox();
 			this.pictureBox15 = new System.Windows.Forms.PictureBox();
 			this.pictureBox16 = new System.Windows.Forms.PictureBox();
 			this.pictureBox17 = new System.Windows.Forms.PictureBox();
@@ -66,7 +66,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.sword)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.monster)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
@@ -125,7 +125,7 @@
 			// 
 			// background
 			// 
-			this.background.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.Background;
+			this.background.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources._2Background;
 			this.background.Location = new System.Drawing.Point(0, 0);
 			this.background.Name = "background";
 			this.background.Size = new System.Drawing.Size(2000, 600);
@@ -219,17 +219,17 @@
 			this.pictureBox13.TabStop = false;
 			this.pictureBox13.Tag = "portal";
 			// 
-			// pictureBox14
+			// monster
 			// 
-			this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox14.Image = global::CptSideScrollerTristanR.Properties.Resources.moo;
-			this.pictureBox14.Location = new System.Drawing.Point(1478, 309);
-			this.pictureBox14.Name = "pictureBox14";
-			this.pictureBox14.Size = new System.Drawing.Size(73, 50);
-			this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox14.TabIndex = 15;
-			this.pictureBox14.TabStop = false;
-			this.pictureBox14.Tag = "monster";
+			this.monster.BackColor = System.Drawing.Color.Transparent;
+			this.monster.Image = global::CptSideScrollerTristanR.Properties.Resources.moo;
+			this.monster.Location = new System.Drawing.Point(1478, 309);
+			this.monster.Name = "monster";
+			this.monster.Size = new System.Drawing.Size(73, 50);
+			this.monster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.monster.TabIndex = 15;
+			this.monster.TabStop = false;
+			this.monster.Tag = "monster";
 			// 
 			// pictureBox15
 			// 
@@ -321,7 +321,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources._37_affinity_game_background_600;
-			this.ClientSize = new System.Drawing.Size(605, 420);
+			this.ClientSize = new System.Drawing.Size(604, 420);
 			this.Controls.Add(this.lblLives);
 			this.Controls.Add(this.lblObjective);
 			this.Controls.Add(this.lblBats);
@@ -329,7 +329,7 @@
 			this.Controls.Add(this.pictureBox17);
 			this.Controls.Add(this.pictureBox16);
 			this.Controls.Add(this.pictureBox15);
-			this.Controls.Add(this.pictureBox14);
+			this.Controls.Add(this.monster);
 			this.Controls.Add(this.pictureBox13);
 			this.Controls.Add(this.sword);
 			this.Controls.Add(this.pictureBox11);
@@ -360,7 +360,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.sword)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.monster)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
@@ -386,7 +386,7 @@
 		private System.Windows.Forms.PictureBox pictureBox11;
 		private System.Windows.Forms.PictureBox sword;
 		private System.Windows.Forms.PictureBox pictureBox13;
-		private System.Windows.Forms.PictureBox pictureBox14;
+		private System.Windows.Forms.PictureBox monster;
 		private System.Windows.Forms.PictureBox pictureBox15;
 		private System.Windows.Forms.PictureBox pictureBox16;
 		private System.Windows.Forms.PictureBox pictureBox17;

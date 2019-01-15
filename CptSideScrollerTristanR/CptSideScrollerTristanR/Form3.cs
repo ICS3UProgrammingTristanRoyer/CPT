@@ -200,7 +200,7 @@ namespace CptSideScrollerTristanR
 					{
 					// and stop the timer
 					gameTimer.Stop();
-					WinScreen theForm = new WinScreen();
+					Level2 theForm = new Level2();
 					this.Hide();
 					theForm.ShowDialog();
 					this.Close();

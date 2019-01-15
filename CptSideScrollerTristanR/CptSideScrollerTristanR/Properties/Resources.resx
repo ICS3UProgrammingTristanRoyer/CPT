@@ -145,6 +145,9 @@
   <data name="moo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\moo.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="newPlayerSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newPlayerSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,7 +184,7 @@
   <data name="Closed Door" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Closed Door.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="newPlayerSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\newPlayerSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="2Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

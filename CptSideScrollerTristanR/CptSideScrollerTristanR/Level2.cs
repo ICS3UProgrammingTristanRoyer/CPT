@@ -19,7 +19,7 @@ namespace CptSideScrollerTristanR
 		bool goleft = false; // boolean which will control the character going left
 		bool goright = false; // boolean which will control the character going right
 		bool jumping = false; // boolean to check if the player is jumping or not
-		bool hasKey = false; // boolean to determine if the player has obtained the key or not.
+		bool hasSword = false; // boolean to determine if the player has obtained the key or not.
 
 		int jumpSpeed = 10; // int to set the jump speed
 		int force = 8; // force of the jump in an integer
@@ -128,7 +128,8 @@ namespace CptSideScrollerTristanR
 				foreach (Control x in this.Controls)
 				{
 					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" ||
-						x is PictureBox && x.Tag == "key" || x is PictureBox && x.Tag == "armor" || x is PictureBox && x.Tag == "flame")
+						x is PictureBox && x.Tag == "sword" || x is PictureBox && x.Tag == "monster" || x is PictureBox && x.Tag == "flame" || 
+						x is PictureBox && x.Tag == "slowPortal" || x is PictureBox && x.Tag == "portal")
 					{
 						x.Left -= backLeft;
 					}
@@ -147,7 +148,7 @@ namespace CptSideScrollerTristanR
 				foreach (Control x in this.Controls)
 				{
 					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" ||
-						x is PictureBox && x.Tag == "key" || x is PictureBox && x.Tag == "armor" || x is PictureBox && x.Tag == "flame")
+					x is PictureBox && x.Tag == "sword" || x is PictureBox && x.Tag == "monster" || x is PictureBox && x.Tag == "flame")
 					{
 						x.Left += backLeft;
 					}
@@ -170,8 +171,21 @@ namespace CptSideScrollerTristanR
 						player.Top = x.Top - player.Height; // also we place the player on top of the picture box
 						jumpSpeed = 0; // set the jump speed to 0
 					}
-
 				}
+					// is X is a picture box and it has a tag of a platform
+					if (x is PictureBox && x.Tag == "portal")
+					{
+						// then we are checking if the player is colliding with the platform
+						// and jumping is set to false
+						if (player.Bounds.IntersectsWith(x.Bounds) )
+						{
+						// then we do the following 
+						// set the force to 8
+						lives = lives - 1;
+						UpdateLives();
+						}
+
+					}
 				// if the picture box found has a tag of a coin 
 				if (x is PictureBox && (String)x.Tag == "bat")
 				{
@@ -183,13 +197,14 @@ namespace CptSideScrollerTristanR
 						this.Controls.Remove(x); // then we are going to remove the coin image 
 						if (hasSword)
 						{
-							core++; // add 1 to the score
-							lblCoins.Text = ("Coins:" + score);
+							score++; // add 1 to the score
+							lblBats.Text = ("Bats:" + score);
 						}
-						else if (hasSword = false)
-							UpdateLives()
+						else if (hasSword == false)
+						{
+							UpdateLives();
 
-
+						}
 
 					}
 				}
@@ -198,7 +213,7 @@ namespace CptSideScrollerTristanR
 
 			// if the player collides with the door and has key boolean is true
 
-			if (player.Bounds.IntersectsWith(door.Bounds) && hasKey)
+			if (player.Bounds.IntersectsWith(monster.Bounds) && hasSword)
 			{
 				// and stop the timer
 				gameTimer.Stop();
@@ -211,19 +226,19 @@ namespace CptSideScrollerTristanR
 
 			// if the player collides with the key picture box
 
-			if (player.Bounds.IntersectsWith(key.Bounds))
+			if (player.Bounds.IntersectsWith(sword.Bounds))
 			{
 
 				// play sound
 				//Play(Application.StartupPath + "\\Unlock.wav");
 
 				// changes the door to a portal
-				door.Image = Properties.Resources.portal_2;
+				player.Image = Properties.Resources.newPlayerSword;
 
 				// then we remove the key from the game
-				this.Controls.Remove(key);
+				this.Controls.Remove(sword);
 				// change the has key boolean to true
-				hasKey = true;
+				hasSword = true;
 
 
 			}
@@ -235,6 +250,8 @@ namespace CptSideScrollerTristanR
 				this.Controls.Remove(sword); // then we are going to remove the armor image 
 				player.Image = Properties.Resources.newPlayerSword;
 			}
+
+
 
 
 
