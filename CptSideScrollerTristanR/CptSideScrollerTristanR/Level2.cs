@@ -21,7 +21,7 @@ namespace CptSideScrollerTristanR
 		bool jumping = false; // boolean to check if the player is jumping or not
 		bool hasSword = false; // boolean to determine if the player has obtained the key or not.
 
-		int jumpSpeed = 10; // int to set the jump speed
+		int jumpSpeed = 12; // int to set the jump speed
 		int force = 8; // force of the jump in an integer
 		int score = 0; // default score int set to 0
 		int lives = 3;
@@ -37,6 +37,7 @@ namespace CptSideScrollerTristanR
 			backSound.SoundLocation = "night.wav";
 
 			InitializeComponent();
+
 			backSound.PlayLooping();
 
 
@@ -51,7 +52,7 @@ namespace CptSideScrollerTristanR
 		}
 		private void UpdateLives()
 		{
-			lives = lives - 1;
+
 			if (lives == 0)
 			{
 				// and stop the timer
@@ -62,7 +63,6 @@ namespace CptSideScrollerTristanR
 				this.Close();
 			}
 
-			lblLives.Text = ("Lives:" + lives);
 			
 		}
 
@@ -90,7 +90,7 @@ namespace CptSideScrollerTristanR
 			// reduce force by 1
 			if (jumping)
 			{
-				jumpSpeed = -12;
+				jumpSpeed = -25;
 				force -= 1;
 			}
 			else
@@ -129,7 +129,7 @@ namespace CptSideScrollerTristanR
 				{
 					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" ||
 						x is PictureBox && x.Tag == "sword" || x is PictureBox && x.Tag == "monster" || x is PictureBox && x.Tag == "flame" || 
-						x is PictureBox && x.Tag == "slowPortal" || x is PictureBox && x.Tag == "portal")
+						x is PictureBox && x.Tag == "slowPortal" || x is PictureBox && x.Tag == "portal" || x is PictureBox && x.Tag == "bat")
 					{
 						x.Left -= backLeft;
 					}
@@ -148,7 +148,8 @@ namespace CptSideScrollerTristanR
 				foreach (Control x in this.Controls)
 				{
 					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" ||
-					x is PictureBox && x.Tag == "sword" || x is PictureBox && x.Tag == "monster" || x is PictureBox && x.Tag == "flame")
+						x is PictureBox && x.Tag == "sword" || x is PictureBox && x.Tag == "monster" || x is PictureBox && x.Tag == "flame" ||
+						x is PictureBox && x.Tag == "slowPortal" || x is PictureBox && x.Tag == "portal" || x is PictureBox && x.Tag == "bat")
 					{
 						x.Left += backLeft;
 					}
@@ -172,8 +173,24 @@ namespace CptSideScrollerTristanR
 						jumpSpeed = 0; // set the jump speed to 0
 					}
 				}
-					// is X is a picture box and it has a tag of a platform
-					if (x is PictureBox && x.Tag == "portal")
+				// is X is a picture box and it has a tag of a platform
+				if (x is PictureBox && x.Tag == "slowPortal")
+				{
+					// then we are checking if the player is colliding with the platform
+					// and jumping is set to false
+					if (player.Bounds.IntersectsWith(x.Bounds) )
+					{
+						lives = lives - 1;
+						UpdateLives();
+						lblLives.Text = ("Lives:" + lives);
+						this.Controls.Remove(x); // then we are going to remove the coin image 
+
+
+
+					}
+				}
+				// is X is a picture box and it has a tag of a platform
+				if (x is PictureBox && x.Tag == "portal")
 					{
 						// then we are checking if the player is colliding with the platform
 						// and jumping is set to false
@@ -195,14 +212,17 @@ namespace CptSideScrollerTristanR
 						Play(Application.StartupPath + "\\Coin.mp3");
 						Console.WriteLine("Played coin sound at: " + Application.StartupPath + "\\Coin.mp3");
 						this.Controls.Remove(x); // then we are going to remove the coin image 
-						if (hasSword)
+						if (hasSword == true)
 						{
 							score++; // add 1 to the score
 							lblBats.Text = ("Bats:" + score);
 						}
 						else if (hasSword == false)
 						{
+							lives = lives - 1;
 							UpdateLives();
+							lblLives.Text = ("Lives:" + lives);
+
 
 						}
 

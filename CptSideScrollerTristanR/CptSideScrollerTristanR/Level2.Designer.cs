@@ -92,6 +92,7 @@
 			this.pictureBox4.Size = new System.Drawing.Size(126, 43);
 			this.pictureBox4.TabIndex = 4;
 			this.pictureBox4.TabStop = false;
+			this.pictureBox4.Tag = "platform";
 			// 
 			// pictureBox3
 			// 
@@ -101,6 +102,7 @@
 			this.pictureBox3.Size = new System.Drawing.Size(255, 43);
 			this.pictureBox3.TabIndex = 3;
 			this.pictureBox3.TabStop = false;
+			this.pictureBox3.Tag = "platform";
 			// 
 			// player
 			// 
@@ -122,6 +124,7 @@
 			this.pictureBox1.Size = new System.Drawing.Size(552, 43);
 			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
+			this.pictureBox1.Tag = "platform";
 			// 
 			// background
 			// 
@@ -186,6 +189,7 @@
 			this.pictureBox5.Size = new System.Drawing.Size(126, 43);
 			this.pictureBox5.TabIndex = 11;
 			this.pictureBox5.TabStop = false;
+			this.pictureBox5.Tag = "platform";
 			// 
 			// pictureBox11
 			// 
@@ -195,6 +199,7 @@
 			this.pictureBox11.Size = new System.Drawing.Size(126, 43);
 			this.pictureBox11.TabIndex = 12;
 			this.pictureBox11.TabStop = false;
+			this.pictureBox11.Tag = "platform";
 			// 
 			// sword
 			// 
@@ -234,11 +239,12 @@
 			// pictureBox15
 			// 
 			this.pictureBox15.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.platform;
-			this.pictureBox15.Location = new System.Drawing.Point(1325, 114);
+			this.pictureBox15.Location = new System.Drawing.Point(1293, 114);
 			this.pictureBox15.Name = "pictureBox15";
-			this.pictureBox15.Size = new System.Drawing.Size(255, 43);
+			this.pictureBox15.Size = new System.Drawing.Size(287, 43);
 			this.pictureBox15.TabIndex = 16;
 			this.pictureBox15.TabStop = false;
+			this.pictureBox15.Tag = "platform";
 			// 
 			// pictureBox16
 			// 
@@ -256,7 +262,7 @@
 			// 
 			this.pictureBox17.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox17.Image = global::CptSideScrollerTristanR.Properties.Resources.bat;
-			this.pictureBox17.Location = new System.Drawing.Point(1046, 274);
+			this.pictureBox17.Location = new System.Drawing.Point(1189, 114);
 			this.pictureBox17.Name = "pictureBox17";
 			this.pictureBox17.Size = new System.Drawing.Size(64, 50);
 			this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -321,7 +327,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources._37_affinity_game_background_600;
-			this.ClientSize = new System.Drawing.Size(604, 420);
+			this.ClientSize = new System.Drawing.Size(608, 420);
 			this.Controls.Add(this.lblLives);
 			this.Controls.Add(this.lblObjective);
 			this.Controls.Add(this.lblBats);
@@ -346,6 +352,8 @@
 			this.Controls.Add(this.background);
 			this.Name = "Level2";
 			this.Text = "Level2";
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
+			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

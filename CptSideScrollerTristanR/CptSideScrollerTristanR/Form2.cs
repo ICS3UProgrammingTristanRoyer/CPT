@@ -22,6 +22,19 @@ namespace CptSideScrollerTristanR
 			prbProgressBar.Value += 10;
 			if (prbProgressBar.Value == 100)
 			timer.Stop();
+			/*//if (lblLoading.Text == "Loading.")
+			//{
+			//	lblLoading.Text = ("Loading..");
+			//}
+			//if (lblLoading.Text == "Loading..")
+			//{
+				lblLoading.Text = ("Loading...");
+
+			}
+			if (lblLoading.Text == "Loading...")
+			{
+				lblLoading.Text = ("Loading.");
+			}*/
 		}
 	}
 }

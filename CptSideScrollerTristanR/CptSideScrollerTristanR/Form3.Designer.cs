@@ -41,7 +41,6 @@
 			this.pictureBox16 = new System.Windows.Forms.PictureBox();
 			this.pictureBox14 = new System.Windows.Forms.PictureBox();
 			this.pictureBox13 = new System.Windows.Forms.PictureBox();
-			this.pictureBox12 = new System.Windows.Forms.PictureBox();
 			this.pictureBox9 = new System.Windows.Forms.PictureBox();
 			this.pictureBox11 = new System.Windows.Forms.PictureBox();
 			this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -57,6 +56,7 @@
 			this.pictureBox6 = new System.Windows.Forms.PictureBox();
 			this.pictureBox7 = new System.Windows.Forms.PictureBox();
 			this.lblCoins = new System.Windows.Forms.Label();
+			this.pictureBox8 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.armor)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
@@ -67,7 +67,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -82,6 +81,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// gameTimer
@@ -207,18 +207,6 @@
 			this.pictureBox13.TabIndex = 13;
 			this.pictureBox13.TabStop = false;
 			this.pictureBox13.Tag = "platform";
-			// 
-			// pictureBox12
-			// 
-			this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox12.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
-			this.pictureBox12.Location = new System.Drawing.Point(1627, 208);
-			this.pictureBox12.Name = "pictureBox12";
-			this.pictureBox12.Size = new System.Drawing.Size(35, 30);
-			this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox12.TabIndex = 12;
-			this.pictureBox12.TabStop = false;
-			this.pictureBox12.Tag = "coin";
 			// 
 			// pictureBox9
 			// 
@@ -383,13 +371,26 @@
 			this.lblCoins.TabIndex = 35;
 			this.lblCoins.Text = "Coins:--";
 			// 
+			// pictureBox8
+			// 
+			this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox8.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.coin2;
+			this.pictureBox8.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
+			this.pictureBox8.Location = new System.Drawing.Point(1635, 208);
+			this.pictureBox8.Name = "pictureBox8";
+			this.pictureBox8.Size = new System.Drawing.Size(33, 30);
+			this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox8.TabIndex = 36;
+			this.pictureBox8.TabStop = false;
+			this.pictureBox8.Tag = "coin";
+			// 
 			// Form3
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
-			this.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources._37_affinity_game_background_600;
-			this.ClientSize = new System.Drawing.Size(605, 481);
+			this.ClientSize = new System.Drawing.Size(622, 498);
+			this.Controls.Add(this.pictureBox8);
 			this.Controls.Add(this.lblCoins);
 			this.Controls.Add(this.pictureBox7);
 			this.Controls.Add(this.pictureBox6);
@@ -406,7 +407,6 @@
 			this.Controls.Add(this.pictureBox16);
 			this.Controls.Add(this.pictureBox14);
 			this.Controls.Add(this.pictureBox13);
-			this.Controls.Add(this.pictureBox12);
 			this.Controls.Add(this.pictureBox9);
 			this.Controls.Add(this.pictureBox11);
 			this.Controls.Add(this.pictureBox10);
@@ -431,7 +431,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
@@ -446,6 +445,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -463,7 +463,6 @@
 		private System.Windows.Forms.PictureBox pictureBox10;
 		private System.Windows.Forms.PictureBox pictureBox11;
 		private System.Windows.Forms.PictureBox pictureBox9;
-		private System.Windows.Forms.PictureBox pictureBox12;
 		private System.Windows.Forms.PictureBox pictureBox13;
 		private System.Windows.Forms.PictureBox pictureBox14;
 		private System.Windows.Forms.PictureBox pictureBox16;
@@ -481,5 +480,6 @@
 		private System.Windows.Forms.PictureBox pictureBox6;
 		private System.Windows.Forms.PictureBox pictureBox7;
 		private System.Windows.Forms.Label lblCoins;
+		private System.Windows.Forms.PictureBox pictureBox8;
 	}
 }

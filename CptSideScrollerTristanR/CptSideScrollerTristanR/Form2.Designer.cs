@@ -31,6 +31,7 @@
 			this.components = new System.ComponentModel.Container();
 			this.prbProgressBar = new System.Windows.Forms.ProgressBar();
 			this.timer = new System.Windows.Forms.Timer(this.components);
+			this.lblLoading = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
@@ -38,15 +39,26 @@
 			// prbProgressBar
 			// 
 			this.prbProgressBar.BackColor = System.Drawing.Color.DarkRed;
-			this.prbProgressBar.Location = new System.Drawing.Point(248, 238);
+			this.prbProgressBar.Location = new System.Drawing.Point(231, 238);
 			this.prbProgressBar.Name = "prbProgressBar";
-			this.prbProgressBar.Size = new System.Drawing.Size(100, 23);
+			this.prbProgressBar.Size = new System.Drawing.Size(139, 37);
 			this.prbProgressBar.TabIndex = 1;
 			// 
 			// timer
 			// 
 			this.timer.Enabled = true;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
+			// 
+			// lblLoading
+			// 
+			this.lblLoading.AutoSize = true;
+			this.lblLoading.BackColor = System.Drawing.Color.DarkRed;
+			this.lblLoading.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblLoading.Location = new System.Drawing.Point(224, 169);
+			this.lblLoading.Name = "lblLoading";
+			this.lblLoading.Size = new System.Drawing.Size(157, 39);
+			this.lblLoading.TabIndex = 2;
+			this.lblLoading.Text = "Loading.";
 			// 
 			// pictureBox1
 			// 
@@ -62,7 +74,9 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.purpleFlames;
 			this.ClientSize = new System.Drawing.Size(599, 481);
+			this.Controls.Add(this.lblLoading);
 			this.Controls.Add(this.prbProgressBar);
 			this.Controls.Add(this.pictureBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -72,13 +86,14 @@
 			this.Text = "Form2";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.ProgressBar prbProgressBar;
 		private System.Windows.Forms.Timer timer;
+		private System.Windows.Forms.Label lblLoading;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }
