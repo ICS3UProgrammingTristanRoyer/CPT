@@ -55,7 +55,7 @@ namespace CptSideScrollerTristanR
 
 		/* allows the user to pass a audio file location as an argument and plays the sound 
 		 utilizing media player */
-		private void Play(string audioPath) 
+		private void Play(String audioPath) 
 		{
 			MediaPlayer myPlayer = new MediaPlayer();
 			myPlayer.Open(new System.Uri(audioPath));
@@ -101,7 +101,7 @@ namespace CptSideScrollerTristanR
 				jumping = false;
 			}
 			// if jumping is true 
-			// then change jump speed to -12
+			// then change jump speed to -25
 			// reduce force by 1
 			if (jumping)
 			{
@@ -143,9 +143,9 @@ namespace CptSideScrollerTristanR
 				// when they are found it will move them towards the left 
 				foreach (Control x in this.Controls)
 				{
-					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" ||
-						x is PictureBox && x.Tag == "sword" || x is PictureBox && x.Tag == "monster" || x is PictureBox && x.Tag == "flame" || 
-						x is PictureBox && x.Tag == "slowPortal" || x is PictureBox && x.Tag == "portal" || x is PictureBox && x.Tag == "bat")
+					if (x is PictureBox && (String)x.Tag == "platform" || x is PictureBox && (String)x.Tag == "coin" || x is PictureBox && (String)x.Tag == "door" ||
+						x is PictureBox && (String)x.Tag == "sword" || x is PictureBox && (String)x.Tag == "monster" || x is PictureBox && (String)x.Tag == "flame" || 
+						x is PictureBox && (String)x.Tag == "slowPortal" || x is PictureBox && (String)x.Tag == "portal" || x is PictureBox && (String)x.Tag == "bat")
 					{
 						x.Left -= backLeft;
 					}
@@ -163,9 +163,9 @@ namespace CptSideScrollerTristanR
 				// when they are found in the level it will move them all towards the right with the background 
 				foreach (Control x in this.Controls)
 				{
-					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" ||
-						x is PictureBox && x.Tag == "sword" || x is PictureBox && x.Tag == "monster" || x is PictureBox && x.Tag == "flame" ||
-						x is PictureBox && x.Tag == "slowPortal" || x is PictureBox && x.Tag == "portal" || x is PictureBox && x.Tag == "bat")
+					if (x is PictureBox && (String)x.Tag == "platform" || x is PictureBox && (String)x.Tag == "coin" || x is PictureBox && (String)x.Tag == "door" ||
+						x is PictureBox && (String)x.Tag == "sword" || x is PictureBox && (String)x.Tag == "monster" || x is PictureBox && (String)x.Tag == "flame" ||
+						x is PictureBox && (String)x.Tag == "slowPortal" || x is PictureBox && (String)x.Tag == "portal" || x is PictureBox && (String)x.Tag == "bat")
 					{
 						x.Left += backLeft;
 					}
@@ -176,7 +176,7 @@ namespace CptSideScrollerTristanR
 			foreach (Control x in this.Controls)
 			{
 				// is X is a picture box and it has a tag of a platform
-				if (x is PictureBox && x.Tag == "platform")
+				if (x is PictureBox && (String)x.Tag == "platform")
 				{
 					// then we are checking if the player is colliding with the platform
 					// and jumping is set to false
@@ -190,13 +190,13 @@ namespace CptSideScrollerTristanR
 					}
 				}
 				// is X is a picture box and it has a tag of a platform
-				if (x is PictureBox && x.Tag == "slowPortal")
+				if (x is PictureBox && (String)x.Tag == "slowPortal")
 				{
-					// then we are checking if the player is colliding with the platform
+					// then we are checking if the player is colliding with the portal
 					// and jumping is set to false
 					if (player.Bounds.IntersectsWith(x.Bounds) )
 					{
-						// loses a life and calls the update livevs function
+						// loses a life and calls the update lives function
 						lives = lives - 1;
 						UpdateLives();
 						// updates the lives label
@@ -208,7 +208,7 @@ namespace CptSideScrollerTristanR
 					}
 				}
 				// is X is a picture box and it has a tag of a platform
-				if (x is PictureBox && x.Tag == "portal")
+				if (x is PictureBox && (String)x.Tag == "portal")
 					{
 						// then we are checking if the player is colliding with the platform
 						// and jumping is set to false
@@ -243,6 +243,7 @@ namespace CptSideScrollerTristanR
 						}
 						else if (hasSword == false)
 						{
+							// you lose a life
 							lives = lives - 1;
 							UpdateLives();
 							lblLives.Text = ("Lives:" + lives);
@@ -264,7 +265,7 @@ namespace CptSideScrollerTristanR
 				// stops the background music
 				backSound.Stop();
 				// displays the win screen
-				WinScreen theForm = new WinScreen();
+				Level3 theForm = new Level3();
 				this.Hide();
 				theForm.ShowDialog();
 				this.Close();
@@ -278,7 +279,9 @@ namespace CptSideScrollerTristanR
 			// now if the player collides with the pic box
 			if (player.Bounds.IntersectsWith(sword.Bounds))
 			{
+				// plays the sound
 				Play(Application.StartupPath + "\\sword.mp3");
+				// shows obj label to instruct the user
 				lblObjective.Text = ("OBJ: Defeat the Beast");
 				this.Controls.Remove(sword); // then we are going to remove the sword image 
 				player.Image = Properties.Resources.newPlayerSword;
@@ -297,6 +300,7 @@ namespace CptSideScrollerTristanR
 				gameTimer.Stop();// stop the timer
 				// stops the background music
 				backSound.Stop();
+				// the loss screen will be displayed
 				LoseScreen theForm = new LoseScreen();
 				this.Hide();
 				theForm.ShowDialog();

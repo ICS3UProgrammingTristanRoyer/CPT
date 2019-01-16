@@ -34,6 +34,7 @@ namespace CptSideScrollerTristanR
 		private void btnStart_Click(object sender, EventArgs e)
 		{
 			Form3 theForm = new Form3();
+			
 			this.Hide();
 			theForm.ShowDialog();
 			this.Close();

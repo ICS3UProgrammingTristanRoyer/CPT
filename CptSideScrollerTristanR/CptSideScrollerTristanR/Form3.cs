@@ -60,12 +60,15 @@ namespace CptSideScrollerTristanR
 			// plays the background music
 			backSound.PlayLooping();
 			
+			
+
+
 
 
 		}
 
 		// function that receives the audio file from the as an argument  and plays it
-		private void Play(string audioPath)
+		private void Play(String audioPath)
 		{
 			MediaPlayer myPlayer = new MediaPlayer();
 			myPlayer.Open(new System.Uri(audioPath));
@@ -133,8 +136,8 @@ namespace CptSideScrollerTristanR
 				// when they are found it will move them towards the left 
 				foreach (Control x in this.Controls)
 				{
-					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" || 
-						x is PictureBox && x.Tag == "key" || x is PictureBox && x.Tag == "armor" || x is PictureBox && x.Tag == "flame")
+					if (x is PictureBox && (String)x.Tag == "platform" || x is PictureBox && (String)x.Tag == "coin" || x is PictureBox && (String)x.Tag == "door" || 
+						x is PictureBox && (String)x.Tag == "key" || x is PictureBox && (String)x.Tag == "armor" || x is PictureBox && (String)x.Tag == "flame")
 					{
 						x.Left -= backLeft;
 					}
@@ -152,8 +155,8 @@ namespace CptSideScrollerTristanR
 				// when they are found in the level it will move them all towards the right with the background 
 				foreach (Control x in this.Controls)
 				{
-					if (x is PictureBox && x.Tag == "platform" || x is PictureBox && x.Tag == "coin" || x is PictureBox && x.Tag == "door" ||
-						x is PictureBox && x.Tag == "key" || x is PictureBox && x.Tag == "armor" || x is PictureBox && x.Tag == "flame")
+					if (x is PictureBox && (String)x.Tag == "platform" || x is PictureBox && (String)x.Tag == "coin" || x is PictureBox && (String)x.Tag == "door" ||
+						x is PictureBox && (String)x.Tag == "key" || x is PictureBox && (String)x.Tag == "armor" || x is PictureBox && (String)x.Tag == "flame")
 					{
 						x.Left += backLeft;
 					}
@@ -164,7 +167,7 @@ namespace CptSideScrollerTristanR
 			foreach (Control x in this.Controls)
 			{
 				// is X is a picture box and it has a tag of a platform
-				if (x is PictureBox && x.Tag == "platform")
+				if (x is PictureBox && (String)x.Tag == "platform")
 				{
 					// then we are checking if the player is colliding with the platform
 					// and jumping is set to false
@@ -195,7 +198,28 @@ namespace CptSideScrollerTristanR
 
 					}
 				}
-				
+				// if the picture box found has a tag of a coin 
+				if (x is PictureBox && (String)x.Tag == "armor")
+				{
+					// now if the player collides with the pic box
+					if (player.Bounds.IntersectsWith(armor.Bounds))
+					{
+						// instructs the user on how to complete the level
+						lblObjective.Text = ("OBJ: Obtain the Key");
+						// play sound
+						Play(Application.StartupPath + "\\armor.mp3");
+
+						// removes the armor from the form
+						this.Controls.Remove(armor); // then we are going to remove the armor image
+
+
+						// changes the image of the player to the armor
+						player.Image = Properties.Resources.newPlayerSword;
+						// edits the boolean variable so that the game acknowledges the player has the armor
+						hasArmor = true;
+					}
+				}
+
 			}
 
 					// if the player collides with the door and has key boolean is true
@@ -232,20 +256,8 @@ namespace CptSideScrollerTristanR
 							
 
 						}
+
 			
-				// now if the player collides with the pic box
-				if (player.Bounds.IntersectsWith(armor.Bounds))
-				{
-				// instructs the user on how to complete the level
-				lblObjective.Text = ("OBJ: Obtain the Key");
-				// play sound
-				Play(Application.StartupPath + "\\armor.mp3");
-				this.Controls.Remove(armor); // then we are going to remove the armor image 
-				// changes the image of the player to the armor
-				player.Image = Properties.Resources.newPlayerSword;
-				// edits the boolean variable so that the game acknowledges the player has the armor
-				hasArmor = true;
-				}
 			
 
 
@@ -273,6 +285,7 @@ namespace CptSideScrollerTristanR
 			if (e.KeyCode == Keys.Left)
 			{
 				goleft = true;
+
 			}
 
 			// if player pressed the right key and the player left plus player width is less than the panell width

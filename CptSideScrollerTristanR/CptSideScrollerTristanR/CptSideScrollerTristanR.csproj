@@ -78,6 +78,12 @@
     <Compile Include="Level2.Designer.cs">
       <DependentUpon>Level2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Level3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Level3.Designer.cs">
+      <DependentUpon>Level3.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoseScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Level2.resx">
       <DependentUpon>Level2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Level3.resx">
+      <DependentUpon>Level3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoseScreen.resx">
       <DependentUpon>LoseScreen.cs</DependentUpon>
@@ -218,6 +227,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\2Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lastBackgroud.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nnewPlatform.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grass2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pillar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
