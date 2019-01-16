@@ -29,34 +29,49 @@ namespace CptSideScrollerTristanR
 
 		int playSpeed = 18; // this int will set the character's speed to 18
 		int backLeft = 8; // this integer will set the background moving speed to 8
+		// uses system media sound player to be able to play music
 		System.Media.SoundPlayer backSound = new System.Media.SoundPlayer();
 
 		public Level2()
 		{
-
+			// assigns the file location to the background sound 
 			backSound.SoundLocation = "night.wav";
 
 			InitializeComponent();
+			// the objective label that instructs the user on what to do
+			lblObjective.Text = ("OBJ: Obtain the sword");
+			// the label that displays the lives the user has remaining
+			// instructs the user on how to complete the level
+			lblLives.Text = ("Lives:" + lives);
 
+			// plays the background music
 			backSound.PlayLooping();
+
+			
 
 
 
 		}
 
-		private void Play(string audioPath)
+		/* allows the user to pass a audio file location as an argument and plays the sound 
+		 utilizing media player */
+		private void Play(string audioPath) 
 		{
 			MediaPlayer myPlayer = new MediaPlayer();
 			myPlayer.Open(new System.Uri(audioPath));
 			myPlayer.Play();
 		}
+		// checks to see when the user has lost all his lives
 		private void UpdateLives()
 		{
 
 			if (lives == 0)
 			{
-				// and stop the timer
+				//  stop the timer
 				gameTimer.Stop();
+				// stops the background music
+				backSound.Stop();
+				// shows the game over screen
 				LoseScreen theForm = new LoseScreen();
 				this.Hide();
 				theForm.ShowDialog();
@@ -91,6 +106,7 @@ namespace CptSideScrollerTristanR
 			if (jumping)
 			{
 				jumpSpeed = -25;
+
 				force -= 1;
 			}
 			else
@@ -180,10 +196,12 @@ namespace CptSideScrollerTristanR
 					// and jumping is set to false
 					if (player.Bounds.IntersectsWith(x.Bounds) )
 					{
+						// loses a life and calls the update livevs function
 						lives = lives - 1;
 						UpdateLives();
+						// updates the lives label
 						lblLives.Text = ("Lives:" + lives);
-						this.Controls.Remove(x); // then we are going to remove the coin image 
+						this.Controls.Remove(x); // then we are going to remove the portal image 
 
 
 
@@ -196,10 +214,16 @@ namespace CptSideScrollerTristanR
 						// and jumping is set to false
 						if (player.Bounds.IntersectsWith(x.Bounds) )
 						{
-						// then we do the following 
-						// set the force to 8
-						lives = lives - 1;
-						UpdateLives();
+						// stops the timer
+						gameTimer.Stop();
+						// stops the background music
+						backSound.Stop();
+						// displays the win screen
+						LoseScreen theForm = new LoseScreen();
+						this.Hide();
+						theForm.ShowDialog();
+						this.Close();
+						
 						}
 
 					}
@@ -209,13 +233,13 @@ namespace CptSideScrollerTristanR
 					// now if the player collides with the pic box
 					if (player.Bounds.IntersectsWith(x.Bounds))
 					{
-						Play(Application.StartupPath + "\\Coin.mp3");
-						Console.WriteLine("Played coin sound at: " + Application.StartupPath + "\\Coin.mp3");
 						this.Controls.Remove(x); // then we are going to remove the coin image 
 						if (hasSword == true)
 						{
+							Play(Application.StartupPath + "\\bat.mp3");
+
 							score++; // add 1 to the score
-							lblBats.Text = ("Bats:" + score);
+							lblBats.Text = ("Bats defeated:" + score);
 						}
 						else if (hasSword == false)
 						{
@@ -237,6 +261,9 @@ namespace CptSideScrollerTristanR
 			{
 				// and stop the timer
 				gameTimer.Stop();
+				// stops the background music
+				backSound.Stop();
+				// displays the win screen
 				WinScreen theForm = new WinScreen();
 				this.Hide();
 				theForm.ShowDialog();
@@ -246,29 +273,17 @@ namespace CptSideScrollerTristanR
 
 			// if the player collides with the key picture box
 
-			if (player.Bounds.IntersectsWith(sword.Bounds))
-			{
-
-				// play sound
-				//Play(Application.StartupPath + "\\Unlock.wav");
-
-				// changes the door to a portal
-				player.Image = Properties.Resources.newPlayerSword;
-
-				// then we remove the key from the game
-				this.Controls.Remove(sword);
-				// change the has key boolean to true
-				hasSword = true;
-
-
-			}
+			
 
 			// now if the player collides with the pic box
 			if (player.Bounds.IntersectsWith(sword.Bounds))
 			{
-				//Play(Application.StartupPath + "\\armor.wav");
-				this.Controls.Remove(sword); // then we are going to remove the armor image 
+				Play(Application.StartupPath + "\\sword.mp3");
+				lblObjective.Text = ("OBJ: Defeat the Beast");
+				this.Controls.Remove(sword); // then we are going to remove the sword image 
 				player.Image = Properties.Resources.newPlayerSword;
+				// change the has sword boolean to true
+				hasSword = true;
 			}
 
 
@@ -280,6 +295,8 @@ namespace CptSideScrollerTristanR
 			if (player.Top + player.Height > this.ClientSize.Height + 60)
 			{
 				gameTimer.Stop();// stop the timer
+				// stops the background music
+				backSound.Stop();
 				LoseScreen theForm = new LoseScreen();
 				this.Hide();
 				theForm.ShowDialog();

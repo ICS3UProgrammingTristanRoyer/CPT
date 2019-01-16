@@ -31,6 +31,7 @@
 			this.btnStart = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnInstuctions = new System.Windows.Forms.Button();
+			this.btnTips = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// btnStart
@@ -56,7 +57,6 @@
 			this.label1.Size = new System.Drawing.Size(192, 25);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Escape the Night";
-			this.label1.Click += new System.EventHandler(this.btnStart_Click);
 			// 
 			// btnInstuctions
 			// 
@@ -71,12 +71,26 @@
 			this.btnInstuctions.UseVisualStyleBackColor = false;
 			this.btnInstuctions.Click += new System.EventHandler(this.btnInstuctions_Click);
 			// 
+			// btnTips
+			// 
+			this.btnTips.BackColor = System.Drawing.Color.Black;
+			this.btnTips.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnTips.ForeColor = System.Drawing.Color.DarkSeaGreen;
+			this.btnTips.Location = new System.Drawing.Point(353, 343);
+			this.btnTips.Name = "btnTips";
+			this.btnTips.Size = new System.Drawing.Size(85, 23);
+			this.btnTips.TabIndex = 3;
+			this.btnTips.Text = "Tips";
+			this.btnTips.UseVisualStyleBackColor = false;
+			this.btnTips.Click += new System.EventHandler(this.btnTips_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.MenuHighlight;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.btnTips);
 			this.Controls.Add(this.btnInstuctions);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnStart);
@@ -92,6 +106,7 @@
 		private System.Windows.Forms.Button btnStart;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button btnInstuctions;
+		private System.Windows.Forms.Button btnTips;
 	}
 }
 

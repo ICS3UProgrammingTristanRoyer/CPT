@@ -27,6 +27,7 @@ namespace CptSideScrollerTristanR
 		bool goright = false; // boolean which will control the character going right
 		bool jumping = false; // boolean to check if the player is jumping or not
 		bool hasKey = false; // boolean to determine if the player has obtained the key or not.
+		bool hasArmor = false;// boolean to determine if the player has obtained the armor or not.
 
 		int jumpSpeed = 10; // int to set the jump speed
 		int force = 8; // force of the jump in an integer
@@ -35,16 +36,13 @@ namespace CptSideScrollerTristanR
 
 		int playSpeed = 18; // this int will set the character's speed to 18
 		int backLeft = 8; // this integer will set the background moving speed to 8
+		// uses system media player for the music variable
 		System.Media.SoundPlayer backSound = new System.Media.SoundPlayer();
 
 
 	
 
-		 //Play the media
-		//System.IO.Stream stream = Properties.Resources.coin;
-		//MediaPlayer musicPlayer = new System.Windows.Media.MediaPlayer();
-		//musicPlayer.Open(new System.Uri(stream));  //This is not working
-		//musicPlayer.Play();
+		 
 
 
 
@@ -52,16 +50,21 @@ namespace CptSideScrollerTristanR
 
 		public Form3()
 		{
-
+			// assigns the background music
 			backSound.SoundLocation = "night.wav";
 
 			InitializeComponent();
+			// instructs the user on how to complete the level
+			lblObjective.Text = ("OBJ: Obtain the armor");
+
+			// plays the background music
 			backSound.PlayLooping();
 			
 
 
 		}
 
+		// function that receives the audio file from the as an argument  and plays it
 		private void Play(string audioPath)
 		{
 			MediaPlayer myPlayer = new MediaPlayer();
@@ -181,10 +184,11 @@ namespace CptSideScrollerTristanR
 					// now if the player collides with the pic box
 					if (player.Bounds.IntersectsWith(x.Bounds))
 					{
+						// plays the coin sound effect
 						Play(Application.StartupPath + "\\Coin.mp3");
-						Console.WriteLine("Played coin sound at: " + Application.StartupPath + "\\Coin.mp3");
 						this.Controls.Remove(x); // then we are going to remove the coin image 
 						score++; // add 1 to the score
+						// updates the score label to display the score
 						lblCoins.Text = ("Coins:" + score);
 						
 
@@ -196,10 +200,11 @@ namespace CptSideScrollerTristanR
 
 					// if the player collides with the door and has key boolean is true
 
-				    if (player.Bounds.IntersectsWith(door.Bounds) && hasKey )
+				    if (player.Bounds.IntersectsWith(door.Bounds) && hasKey && hasArmor  )
 					{
-					// and stop the timer
+					// stop the timer
 					gameTimer.Stop();
+					// move to level 2
 					Level2 theForm = new Level2();
 					this.Hide();
 					theForm.ShowDialog();
@@ -212,8 +217,10 @@ namespace CptSideScrollerTristanR
 						if (player.Bounds.IntersectsWith(key.Bounds))
 						{
 
-							// play sound
-							//Play(Application.StartupPath + "\\Unlock.wav");
+							// instructs the user on how to complete the level
+							lblObjective.Text = ("OBJ: Return to the Portal");
+							//play sound
+							Play(Application.StartupPath + "\\Unlock.mp3");
 
 							// changes the door to a portal
 							door.Image = Properties.Resources.portal_2;
@@ -229,9 +236,15 @@ namespace CptSideScrollerTristanR
 				// now if the player collides with the pic box
 				if (player.Bounds.IntersectsWith(armor.Bounds))
 				{
-				//Play(Application.StartupPath + "\\armor.wav");
+				// instructs the user on how to complete the level
+				lblObjective.Text = ("OBJ: Obtain the Key");
+				// play sound
+				Play(Application.StartupPath + "\\armor.mp3");
 				this.Controls.Remove(armor); // then we are going to remove the armor image 
-					player.Image = Properties.Resources.newPlayer;
+				// changes the image of the player to the armor
+				player.Image = Properties.Resources.newPlayerSword;
+				// edits the boolean variable so that the game acknowledges the player has the armor
+				hasArmor = true;
 				}
 			
 
@@ -241,7 +254,10 @@ namespace CptSideScrollerTristanR
 				if (player.Top + player.Height > this.ClientSize.Height + 60)
 					{
 					gameTimer.Stop();// stop the timer
-					LoseScreen theForm = new LoseScreen();
+					 // stops the background music
+					backSound.Stop();
+				// shows the "you Lose" screen
+				LoseScreen theForm = new LoseScreen();
 					this.Hide();
 					theForm.ShowDialog();
 					this.Close();

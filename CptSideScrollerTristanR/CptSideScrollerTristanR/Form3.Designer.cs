@@ -31,6 +31,12 @@
 			this.components = new System.ComponentModel.Container();
 			this.gameTimer = new System.Windows.Forms.Timer(this.components);
 			this.txtCoins = new System.Windows.Forms.Label();
+			this.lblCoins = new System.Windows.Forms.Label();
+			this.pictureBox8 = new System.Windows.Forms.PictureBox();
+			this.pictureBox7 = new System.Windows.Forms.PictureBox();
+			this.pictureBox6 = new System.Windows.Forms.PictureBox();
+			this.pictureBox5 = new System.Windows.Forms.PictureBox();
+			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.armor = new System.Windows.Forms.PictureBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.pictureBox27 = new System.Windows.Forms.PictureBox();
@@ -51,12 +57,12 @@
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.background = new System.Windows.Forms.PictureBox();
-			this.pictureBox4 = new System.Windows.Forms.PictureBox();
-			this.pictureBox5 = new System.Windows.Forms.PictureBox();
-			this.pictureBox6 = new System.Windows.Forms.PictureBox();
-			this.pictureBox7 = new System.Windows.Forms.PictureBox();
-			this.lblCoins = new System.Windows.Forms.Label();
-			this.pictureBox8 = new System.Windows.Forms.PictureBox();
+			this.lblObjective = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.armor)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
@@ -77,11 +83,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// gameTimer
@@ -100,6 +101,75 @@
 			this.txtCoins.Size = new System.Drawing.Size(36, 13);
 			this.txtCoins.TabIndex = 29;
 			this.txtCoins.Text = "Coins:";
+			// 
+			// lblCoins
+			// 
+			this.lblCoins.AutoSize = true;
+			this.lblCoins.BackColor = System.Drawing.SystemColors.MenuHighlight;
+			this.lblCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblCoins.ForeColor = System.Drawing.Color.DarkRed;
+			this.lblCoins.Location = new System.Drawing.Point(482, 9);
+			this.lblCoins.Name = "lblCoins";
+			this.lblCoins.Size = new System.Drawing.Size(61, 16);
+			this.lblCoins.TabIndex = 35;
+			this.lblCoins.Text = "Coins:--";
+			// 
+			// pictureBox8
+			// 
+			this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox8.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.coin2;
+			this.pictureBox8.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
+			this.pictureBox8.Location = new System.Drawing.Point(1635, 208);
+			this.pictureBox8.Name = "pictureBox8";
+			this.pictureBox8.Size = new System.Drawing.Size(33, 30);
+			this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox8.TabIndex = 36;
+			this.pictureBox8.TabStop = false;
+			this.pictureBox8.Tag = "coin";
+			// 
+			// pictureBox7
+			// 
+			this.pictureBox7.Image = global::CptSideScrollerTristanR.Properties.Resources.purpleFlames;
+			this.pictureBox7.Location = new System.Drawing.Point(1819, 451);
+			this.pictureBox7.Name = "pictureBox7";
+			this.pictureBox7.Size = new System.Drawing.Size(105, 28);
+			this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox7.TabIndex = 34;
+			this.pictureBox7.TabStop = false;
+			this.pictureBox7.Tag = "flame";
+			// 
+			// pictureBox6
+			// 
+			this.pictureBox6.Image = global::CptSideScrollerTristanR.Properties.Resources.purpleFlames;
+			this.pictureBox6.Location = new System.Drawing.Point(1649, 451);
+			this.pictureBox6.Name = "pictureBox6";
+			this.pictureBox6.Size = new System.Drawing.Size(120, 29);
+			this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox6.TabIndex = 33;
+			this.pictureBox6.TabStop = false;
+			this.pictureBox6.Tag = "flame";
+			// 
+			// pictureBox5
+			// 
+			this.pictureBox5.Image = global::CptSideScrollerTristanR.Properties.Resources.purpleFlames;
+			this.pictureBox5.Location = new System.Drawing.Point(1235, 451);
+			this.pictureBox5.Name = "pictureBox5";
+			this.pictureBox5.Size = new System.Drawing.Size(130, 29);
+			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox5.TabIndex = 32;
+			this.pictureBox5.TabStop = false;
+			this.pictureBox5.Tag = "flame";
+			// 
+			// pictureBox4
+			// 
+			this.pictureBox4.Image = global::CptSideScrollerTristanR.Properties.Resources.purpleFlames;
+			this.pictureBox4.Location = new System.Drawing.Point(602, 451);
+			this.pictureBox4.Name = "pictureBox4";
+			this.pictureBox4.Size = new System.Drawing.Size(583, 29);
+			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox4.TabIndex = 31;
+			this.pictureBox4.TabStop = false;
+			this.pictureBox4.Tag = "flame";
 			// 
 			// armor
 			// 
@@ -315,81 +385,22 @@
 			this.background.TabIndex = 0;
 			this.background.TabStop = false;
 			// 
-			// pictureBox4
+			// lblObjective
 			// 
-			this.pictureBox4.Image = global::CptSideScrollerTristanR.Properties.Resources.purpleFlames;
-			this.pictureBox4.Location = new System.Drawing.Point(602, 451);
-			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(583, 29);
-			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox4.TabIndex = 31;
-			this.pictureBox4.TabStop = false;
-			this.pictureBox4.Tag = "flame";
-			// 
-			// pictureBox5
-			// 
-			this.pictureBox5.Image = global::CptSideScrollerTristanR.Properties.Resources.purpleFlames;
-			this.pictureBox5.Location = new System.Drawing.Point(1235, 451);
-			this.pictureBox5.Name = "pictureBox5";
-			this.pictureBox5.Size = new System.Drawing.Size(130, 29);
-			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox5.TabIndex = 32;
-			this.pictureBox5.TabStop = false;
-			this.pictureBox5.Tag = "flame";
-			// 
-			// pictureBox6
-			// 
-			this.pictureBox6.Image = global::CptSideScrollerTristanR.Properties.Resources.purpleFlames;
-			this.pictureBox6.Location = new System.Drawing.Point(1649, 451);
-			this.pictureBox6.Name = "pictureBox6";
-			this.pictureBox6.Size = new System.Drawing.Size(120, 29);
-			this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox6.TabIndex = 33;
-			this.pictureBox6.TabStop = false;
-			this.pictureBox6.Tag = "flame";
-			// 
-			// pictureBox7
-			// 
-			this.pictureBox7.Image = global::CptSideScrollerTristanR.Properties.Resources.purpleFlames;
-			this.pictureBox7.Location = new System.Drawing.Point(1819, 451);
-			this.pictureBox7.Name = "pictureBox7";
-			this.pictureBox7.Size = new System.Drawing.Size(105, 28);
-			this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox7.TabIndex = 34;
-			this.pictureBox7.TabStop = false;
-			this.pictureBox7.Tag = "flame";
-			// 
-			// lblCoins
-			// 
-			this.lblCoins.AutoSize = true;
-			this.lblCoins.BackColor = System.Drawing.SystemColors.MenuHighlight;
-			this.lblCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblCoins.ForeColor = System.Drawing.Color.DarkRed;
-			this.lblCoins.Location = new System.Drawing.Point(482, 9);
-			this.lblCoins.Name = "lblCoins";
-			this.lblCoins.Size = new System.Drawing.Size(61, 16);
-			this.lblCoins.TabIndex = 35;
-			this.lblCoins.Text = "Coins:--";
-			// 
-			// pictureBox8
-			// 
-			this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox8.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.coin2;
-			this.pictureBox8.Image = global::CptSideScrollerTristanR.Properties.Resources.coin2;
-			this.pictureBox8.Location = new System.Drawing.Point(1635, 208);
-			this.pictureBox8.Name = "pictureBox8";
-			this.pictureBox8.Size = new System.Drawing.Size(33, 30);
-			this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox8.TabIndex = 36;
-			this.pictureBox8.TabStop = false;
-			this.pictureBox8.Tag = "coin";
+			this.lblObjective.AutoSize = true;
+			this.lblObjective.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblObjective.Location = new System.Drawing.Point(13, 13);
+			this.lblObjective.Name = "lblObjective";
+			this.lblObjective.Size = new System.Drawing.Size(55, 24);
+			this.lblObjective.TabIndex = 37;
+			this.lblObjective.Text = "OBJ:";
 			// 
 			// Form3
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.AutoScroll = true;
-			this.ClientSize = new System.Drawing.Size(622, 498);
+			this.ClientSize = new System.Drawing.Size(605, 484);
+			this.Controls.Add(this.lblObjective);
 			this.Controls.Add(this.pictureBox8);
 			this.Controls.Add(this.lblCoins);
 			this.Controls.Add(this.pictureBox7);
@@ -421,6 +432,11 @@
 			this.Text = "Form3";
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
 			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.armor)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
@@ -441,11 +457,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -481,5 +492,6 @@
 		private System.Windows.Forms.PictureBox pictureBox7;
 		private System.Windows.Forms.Label lblCoins;
 		private System.Windows.Forms.PictureBox pictureBox8;
+		private System.Windows.Forms.Label lblObjective;
 	}
 }
