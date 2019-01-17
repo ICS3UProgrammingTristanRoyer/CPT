@@ -323,6 +323,16 @@ namespace CptSideScrollerTristanR.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pillar2 {
+            get {
+                object obj = ResourceManager.GetObject("Pillar2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap platform {
             get {
                 object obj = ResourceManager.GetObject("platform", resourceCulture);

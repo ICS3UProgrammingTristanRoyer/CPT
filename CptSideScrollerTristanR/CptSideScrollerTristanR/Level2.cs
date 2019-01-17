@@ -194,7 +194,6 @@ namespace CptSideScrollerTristanR
 				if (x is PictureBox && (String)x.Tag == "slowPortal")
 				{
 					// then we are checking if the player is colliding with the portal
-					// and jumping is set to false
 					if (player.Bounds.IntersectsWith(x.Bounds) )
 					{
 						// plays a sound
@@ -213,15 +212,14 @@ namespace CptSideScrollerTristanR
 				// is X is a picture box and it has a tag of a platform
 				if (x is PictureBox && (String)x.Tag == "portal")
 					{
-						// then we are checking if the player is colliding with the platform
-						// and jumping is set to false
+						// then we are checking if the player is colliding with the portal
 						if (player.Bounds.IntersectsWith(x.Bounds) )
 						{
 						// stops the timer
 						gameTimer.Stop();
 						// stops the background music
 						backSound.Stop();
-						// displays the win screen
+						// displays the lose screen
 						LoseScreen theForm = new LoseScreen();
 						this.Hide();
 						theForm.ShowDialog();
@@ -267,6 +265,7 @@ namespace CptSideScrollerTristanR
 						// shows obj label to instruct the user
 						lblObjective.Text = ("OBJ: Defeat the Beast");
 						this.Controls.Remove(sword); // then we are going to remove the sword image 
+						// change the image of the player
 						player.Image = Properties.Resources.newPlayerSword;
 						// change the has sword boolean to true
 						hasSword = true;
@@ -347,7 +346,7 @@ namespace CptSideScrollerTristanR
 				}
 			}
 
-			// if player pressed the right key and the player left plus player width is less than the panell width
+			// if player pressed the right key and the player left plus player width is less than the panel width
 
 			if (e.KeyCode == Keys.Right)
 			{

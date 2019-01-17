@@ -243,7 +243,7 @@ namespace CptSideScrollerTristanR
 
 			}
 
-					// if the player collides with the door and has key boolean is true
+					// if the player collides with the door and has key  boolean is true along with the hasArmor boolean
 
 				    if (player.Bounds.IntersectsWith(door.Bounds) && hasKey && hasArmor  )
 					{

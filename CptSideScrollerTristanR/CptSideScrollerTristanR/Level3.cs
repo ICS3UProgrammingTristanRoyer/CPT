@@ -111,7 +111,7 @@ namespace CptSideScrollerTristanR
 				{   // now if the player collides with the pic box
 					if (player.Bounds.IntersectsWith(x.Bounds))
 					{
-						// plays the background music
+						// stops the background music
 						backSound.Stop();
 						// and stop the timer
 						gameTimer.Stop();
