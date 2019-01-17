@@ -57,10 +57,12 @@
 			// 
 			// pillar
 			// 
-			this.pillar.Image = global::CptSideScrollerTristanR.Properties.Resources.Pillar;
-			this.pillar.Location = new System.Drawing.Point(310, -2);
+			this.pillar.BackColor = System.Drawing.Color.Transparent;
+			this.pillar.Image = global::CptSideScrollerTristanR.Properties.Resources.Pillar2;
+			this.pillar.Location = new System.Drawing.Point(292, -2);
 			this.pillar.Name = "pillar";
-			this.pillar.Size = new System.Drawing.Size(37, 456);
+			this.pillar.Size = new System.Drawing.Size(77, 456);
+			this.pillar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pillar.TabIndex = 2;
 			this.pillar.TabStop = false;
 			this.pillar.Tag = "pillar";
