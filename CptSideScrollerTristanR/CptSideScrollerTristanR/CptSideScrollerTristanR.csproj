@@ -243,5 +243,35 @@
   <ItemGroup>
     <None Include="Resources\Pillar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LastBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newPlayerSword2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\armor.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bat.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Coin.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\night.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Portal.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sword.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unlock.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Victory.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

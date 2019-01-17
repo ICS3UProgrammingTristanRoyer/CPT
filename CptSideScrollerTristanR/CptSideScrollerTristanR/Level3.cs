@@ -26,7 +26,7 @@ namespace CptSideScrollerTristanR
 		public Level3()
 		{
 			// assigns the file location to the background sound 
-			backSound.SoundLocation = "night.wav";
+			backSound.SoundLocation = "Victory.wav";
 			InitializeComponent();
 			// plays the background music
 			backSound.PlayLooping();
@@ -106,7 +106,7 @@ namespace CptSideScrollerTristanR
 						jumpSpeed = 0; // set the jump speed to 0
 					}
 				}
-				// is X is a picture box and it has a tag of a platform
+				// is X is a picture box and it has a tag of a pillar
 				if (x is PictureBox && (String)x.Tag == "pillar")
 				{   // now if the player collides with the pic box
 					if (player.Bounds.IntersectsWith(x.Bounds))
@@ -181,6 +181,11 @@ namespace CptSideScrollerTristanR
 			{
 				jumping = false;
 			}
+
+		}
+
+		private void pictureBox2_Click(object sender, EventArgs e)
+		{
 
 		}
 	}

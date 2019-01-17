@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ * Created by: Tristan Royer
+ * Finished on: 16 - 1 - 2019
+ * Created for: ICS3U Programming
+ * CPT
+ * This program is a game created by following a tutorial for "side scrolling game" by MOO ICT
+ * this game also utilizies extra code obtained through research.
+*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,14 +21,24 @@ namespace CptSideScrollerTristanR
 {
 	public partial class Form1 : Form
 	{
+		// allows sound to be played
+		System.Media.SoundPlayer backSound = new System.Media.SoundPlayer();
+
 		public Form1()
 		{
 			// aborts the load to allow the splash screen to be shown first
 			Thread load = new Thread(new ThreadStart(StartSplash));
 			load.Start();
-			Thread.Sleep(2000);
-			InitializeComponent();
+			Thread.Sleep(2600);
 			load.Abort();
+
+			// assign the sound file to the variable
+			backSound.SoundLocation = "Victory.wav";
+			InitializeComponent();
+
+
+			backSound.PlayLooping();
+
 		}
 		public void StartSplash()
 
@@ -33,8 +51,9 @@ namespace CptSideScrollerTristanR
 
 		private void btnStart_Click(object sender, EventArgs e)
 		{
+			// stops the music , closes this form and starts the game
+			backSound.Stop();
 			Form3 theForm = new Form3();
-			
 			this.Hide();
 			theForm.ShowDialog();
 			this.Close();

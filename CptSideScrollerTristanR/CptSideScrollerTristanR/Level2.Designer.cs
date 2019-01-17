@@ -292,7 +292,7 @@
 			// player
 			// 
 			this.player.BackColor = System.Drawing.Color.Transparent;
-			this.player.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.newPlayer;
+			this.player.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.newPlayerSword;
 			this.player.Location = new System.Drawing.Point(12, 321);
 			this.player.Name = "player";
 			this.player.Size = new System.Drawing.Size(54, 50);

@@ -48,11 +48,12 @@
 			this.pictureBox2.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.grass2;
 			this.pictureBox2.Location = new System.Drawing.Point(2, 452);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(330, 53);
+			this.pictureBox2.Size = new System.Drawing.Size(319, 50);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox2.TabIndex = 1;
 			this.pictureBox2.TabStop = false;
 			this.pictureBox2.Tag = "platform";
+			this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
 			// 
 			// pillar
 			// 
@@ -79,7 +80,7 @@
 			// player2
 			// 
 			this.player2.BackColor = System.Drawing.Color.Transparent;
-			this.player2.Image = global::CptSideScrollerTristanR.Properties.Resources.newPlayerSword;
+			this.player2.Image = global::CptSideScrollerTristanR.Properties.Resources.newPlayerSword21;
 			this.player2.Location = new System.Drawing.Point(593, 388);
 			this.player2.Name = "player2";
 			this.player2.Size = new System.Drawing.Size(56, 58);
@@ -107,8 +108,9 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources._37_affinity_game_background_600;
-			this.ClientSize = new System.Drawing.Size(647, 502);
+			this.BackgroundImage = global::CptSideScrollerTristanR.Properties.Resources.LastBackground;
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.ClientSize = new System.Drawing.Size(650, 489);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.player2);
 			this.Controls.Add(this.player);

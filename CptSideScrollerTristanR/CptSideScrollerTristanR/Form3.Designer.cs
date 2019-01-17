@@ -174,7 +174,7 @@
 			// armor
 			// 
 			this.armor.BackColor = System.Drawing.Color.Transparent;
-			this.armor.Image = global::CptSideScrollerTristanR.Properties.Resources.newPlayer;
+			this.armor.Image = global::CptSideScrollerTristanR.Properties.Resources.newPlayerSword;
 			this.armor.Location = new System.Drawing.Point(495, 361);
 			this.armor.Name = "armor";
 			this.armor.Size = new System.Drawing.Size(58, 60);

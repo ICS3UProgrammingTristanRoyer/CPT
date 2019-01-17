@@ -11,7 +11,6 @@ using System.Media;
 using System.Threading;
 using System.Windows.Media;
 using WMPLib;
-
 //https://stackoverflow.com/questions/13925840/how-to-play-two-sound-file-at-the-same-time-with-wpf
 //https://stackoverflow.com/questions/1285294/play-multiple-sounds-using-soundplayer
 
@@ -66,7 +65,6 @@ namespace CptSideScrollerTristanR
 
 
 		}
-
 		// function that receives the audio file from the as an argument  and plays it
 		private void Play(String audioPath)
 		{
@@ -219,6 +217,29 @@ namespace CptSideScrollerTristanR
 						hasArmor = true;
 					}
 				}
+				if (x is PictureBox && (String)x.Tag == "key")
+				{
+					// if the player collides with the key picture box and has the armor
+
+					if (player.Bounds.IntersectsWith(key.Bounds) && hasArmor == true)
+					{
+
+						// instructs the user on how to complete the level
+						lblObjective.Text = ("OBJ: Return to the Portal");
+						//play sound
+						Play(Application.StartupPath + "\\Unlock.mp3");
+
+						// changes the door to a portal
+						door.Image = Properties.Resources.portal_2;
+
+						// then we remove the key from the game
+						this.Controls.Remove(key);
+						// change the has key boolean to true
+						hasKey = true;
+
+
+					}
+				}
 
 			}
 
@@ -235,28 +256,8 @@ namespace CptSideScrollerTristanR
 					this.Close();
 
 			}
-					
-					// if the player collides with the key picture box
 
-						if (player.Bounds.IntersectsWith(key.Bounds))
-						{
-
-							// instructs the user on how to complete the level
-							lblObjective.Text = ("OBJ: Return to the Portal");
-							//play sound
-							Play(Application.StartupPath + "\\Unlock.mp3");
-
-							// changes the door to a portal
-							door.Image = Properties.Resources.portal_2;
-
-							// then we remove the key from the game
-							this.Controls.Remove(key);
-							// change the has key boolean to true
-							hasKey = true;
-							
-
-						}
-
+			
 			
 			
 
@@ -284,7 +285,14 @@ namespace CptSideScrollerTristanR
 			// then we set the car left boolean to be true
 			if (e.KeyCode == Keys.Left)
 			{
+				
 				goleft = true;
+			
+				if (hasArmor == true)
+				{
+					player.Image = Properties.Resources.newPlayerSword2;
+
+				}
 
 			}
 
@@ -294,6 +302,14 @@ namespace CptSideScrollerTristanR
 			{
 				// then we set the plater right to be true
 				goright = true;
+
+				if (hasArmor == true)
+				{
+					player.Image = Properties.Resources.newPlayerSword;
+
+				}
+
+
 			}
 
 			// if the player pressed the space key and jumping boolean is false
@@ -316,6 +332,7 @@ namespace CptSideScrollerTristanR
 			// if the RIGHT key is up we set the car right to false
 			{
 				goright = false;
+
 			}
 			// when the keys are released we check if jumping is true
 			// if so we need to set it back to false so the player can jump again

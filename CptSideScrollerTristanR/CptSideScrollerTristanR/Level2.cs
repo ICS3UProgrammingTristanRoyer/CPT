@@ -61,11 +61,12 @@ namespace CptSideScrollerTristanR
 			myPlayer.Open(new System.Uri(audioPath));
 			myPlayer.Play();
 		}
-		// checks to see when the user has lost all his lives
-		private void UpdateLives()
+		// removes a life and checks to see when the user has lost all his lives 
+		private int UpdateLives(ref int livesRemaining)
 		{
+			livesRemaining = livesRemaining - 1;
 
-			if (lives == 0)
+			if (livesRemaining == 0)
 			{
 				//  stop the timer
 				gameTimer.Stop();
@@ -78,7 +79,7 @@ namespace CptSideScrollerTristanR
 				this.Close();
 			}
 
-			
+			return livesRemaining;
 		}
 
 
@@ -196,9 +197,11 @@ namespace CptSideScrollerTristanR
 					// and jumping is set to false
 					if (player.Bounds.IntersectsWith(x.Bounds) )
 					{
-						// loses a life and calls the update lives function
-						lives = lives - 1;
-						UpdateLives();
+						// plays a sound
+						Play(Application.StartupPath + "\\Portal.mp3");
+
+						// removes a life
+						UpdateLives(ref lives);
 						// updates the lives label
 						lblLives.Text = ("Lives:" + lives);
 						this.Controls.Remove(x); // then we are going to remove the portal image 
@@ -244,8 +247,8 @@ namespace CptSideScrollerTristanR
 						else if (hasSword == false)
 						{
 							// you lose a life
-							lives = lives - 1;
-							UpdateLives();
+							
+							UpdateLives(ref lives);
 							lblLives.Text = ("Lives:" + lives);
 
 
@@ -253,10 +256,27 @@ namespace CptSideScrollerTristanR
 
 					}
 				}
+				// if the picture box found has a tag of a coin 
+				if (x is PictureBox && (String)x.Tag == "sword")
+				{
+					// now if the player collides with the pic box
+					if (player.Bounds.IntersectsWith(sword.Bounds))
+					{
+						// plays the sound
+						Play(Application.StartupPath + "\\sword.mp3");
+						// shows obj label to instruct the user
+						lblObjective.Text = ("OBJ: Defeat the Beast");
+						this.Controls.Remove(sword); // then we are going to remove the sword image 
+						player.Image = Properties.Resources.newPlayerSword;
+						// change the has sword boolean to true
+						hasSword = true;
+					}
+
+				}
 
 			}
 
-			// if the player collides with the door and has key boolean is true
+			// if the player collides with the monster and has sword boolean is true
 
 			if (player.Bounds.IntersectsWith(monster.Bounds) && hasSword)
 			{
@@ -269,33 +289,32 @@ namespace CptSideScrollerTristanR
 				this.Hide();
 				theForm.ShowDialog();
 				this.Close();
+				
 
 			}
-
-			// if the player collides with the key picture box
-
-			
-
-			// now if the player collides with the pic box
-			if (player.Bounds.IntersectsWith(sword.Bounds))
+			// if the player collides with the beast and the sword boolean is false
+			if (player.Bounds.IntersectsWith(monster.Bounds) && hasSword == false)
 			{
-				// plays the sound
-				Play(Application.StartupPath + "\\sword.mp3");
-				// shows obj label to instruct the user
-				lblObjective.Text = ("OBJ: Defeat the Beast");
-				this.Controls.Remove(sword); // then we are going to remove the sword image 
-				player.Image = Properties.Resources.newPlayerSword;
-				// change the has sword boolean to true
-				hasSword = true;
+
+				//  stop the timer
+				gameTimer.Stop();
+				// stops the background music
+				backSound.Stop();
+				// shows the game over screen
+				LoseScreen theForm = new LoseScreen();
+				this.Hide();
+				theForm.ShowDialog();
+				this.Close();
+
 			}
 
 
 
 
 
-			// this is where the player dies
-			// if the player goes below the forms height then we will end the game
-			if (player.Top + player.Height > this.ClientSize.Height + 60)
+				// this is where the player dies
+				// if the player goes below the forms height then we will end the game
+				if (player.Top + player.Height > this.ClientSize.Height + 60)
 			{
 				gameTimer.Stop();// stop the timer
 				// stops the background music
@@ -317,6 +336,15 @@ namespace CptSideScrollerTristanR
 			if (e.KeyCode == Keys.Left)
 			{
 				goleft = true;
+				if (hasSword == true)
+				{
+					player.Image = Properties.Resources.newPlayer2;
+
+				}
+				else if (hasSword == false)
+				{
+					player.Image = Properties.Resources.newPlayerSword2;
+				}
 			}
 
 			// if player pressed the right key and the player left plus player width is less than the panell width
@@ -325,6 +353,15 @@ namespace CptSideScrollerTristanR
 			{
 				// then we set the plater right to be true
 				goright = true;
+				if (hasSword == true)
+				{
+					player.Image = Properties.Resources.newPlayer;
+
+				}
+				else if (hasSword == false)
+				{
+					player.Image = Properties.Resources.newPlayerSword;
+				}
 			}
 
 			// if the player pressed the space key and jumping boolean is false
