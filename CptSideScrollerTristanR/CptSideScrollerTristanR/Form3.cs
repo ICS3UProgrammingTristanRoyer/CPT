@@ -11,8 +11,7 @@ using System.Media;
 using System.Threading;
 using System.Windows.Media;
 using WMPLib;
-//https://stackoverflow.com/questions/13925840/how-to-play-two-sound-file-at-the-same-time-with-wpf
-//https://stackoverflow.com/questions/1285294/play-multiple-sounds-using-soundplayer
+
 
 
 
@@ -37,14 +36,6 @@ namespace CptSideScrollerTristanR
 		int backLeft = 8; // this integer will set the background moving speed to 8
 		// uses system media player for the music variable
 		System.Media.SoundPlayer backSound = new System.Media.SoundPlayer();
-
-
-	
-
-		 
-
-
-
 
 
 		public Form3()

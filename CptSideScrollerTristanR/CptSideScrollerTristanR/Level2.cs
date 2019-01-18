@@ -335,6 +335,7 @@ namespace CptSideScrollerTristanR
 			if (e.KeyCode == Keys.Left)
 			{
 				goleft = true;
+				// changes the direction of the player
 				if (hasSword == true)
 				{
 					player.Image = Properties.Resources.newPlayer2;
@@ -352,6 +353,7 @@ namespace CptSideScrollerTristanR
 			{
 				// then we set the plater right to be true
 				goright = true;
+				// changes the direction of the player
 				if (hasSword == true)
 				{
 					player.Image = Properties.Resources.newPlayer;

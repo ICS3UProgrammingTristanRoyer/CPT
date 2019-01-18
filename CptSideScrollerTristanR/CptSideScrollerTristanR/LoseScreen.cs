@@ -19,6 +19,7 @@ namespace CptSideScrollerTristanR
 
 		private void btnBack_Click(object sender, EventArgs e)
 		{
+			// hides this from and shows the menu again.
 			Form1 theForm = new Form1();
 			this.Hide();
 			theForm.ShowDialog();

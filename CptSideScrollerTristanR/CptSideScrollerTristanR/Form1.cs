@@ -36,7 +36,7 @@ namespace CptSideScrollerTristanR
 			backSound.SoundLocation = "Victory.wav";
 			InitializeComponent();
 
-
+			// play background sound.
 			backSound.PlayLooping();
 
 		}

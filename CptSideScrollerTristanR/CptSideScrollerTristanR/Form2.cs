@@ -21,6 +21,7 @@ namespace CptSideScrollerTristanR
 		Random rng = new Random();
 		public Form2()
 		{
+			// inserts the tips to the list
 			listTips.Insert(0, "There is a strange presence here...");
 			listTips.Insert(1, "coins are shiny why not collect them?:)");
 			listTips.Insert(2, "Doors usually require keys to unlock...");
@@ -58,7 +59,7 @@ namespace CptSideScrollerTristanR
 
 		private void timer_Tick(object sender, EventArgs e)
 		{
-			
+			// adds value to the progress bar and calls the loading function
 				prbProgressBar.Value += 10;
 				Loading();
 			
@@ -74,6 +75,7 @@ namespace CptSideScrollerTristanR
 
 		private void tipTimer_Tick(object sender, EventArgs e)
 		{
+			// generates a random number which determines the tip that is shown
 		
 			aRandomNumber = rng.Next(0, 10);
 			lblTips.Text = listTips[aRandomNumber];
