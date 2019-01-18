@@ -261,7 +261,7 @@ namespace CptSideScrollerTristanR
 					if (player.Bounds.IntersectsWith(sword.Bounds))
 					{
 						// plays the sound
-						Play(Application.StartupPath + "\\sword.mp3");
+						Play(Application.StartupPath + "\\Sword.mp3");
 						// shows obj label to instruct the user
 						lblObjective.Text = ("OBJ: Defeat the Beast");
 						this.Controls.Remove(sword); // then we are going to remove the sword image 
